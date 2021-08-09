@@ -1,0 +1,105 @@
+$slide: null
+
+@mixin slideInLeft() 
+    @keyframes slideInLeft
+        0%
+            transform: translate3d(-200%, 0, 0) scale(.9)
+            opacity: 0
+        10% 
+            opacity: 0
+        80%
+            opacity: 1
+        100%
+            transform: translate3d(0, 0, 0) scale(1)
+
+@mixin slideInRight() 
+    @keyframes slideInRight
+        0%
+            transform: translate3d(200%, 0, 0) scale(.9)
+            opacity: 0
+        10% 
+            opacity: 0
+        80%
+            opacity: 1
+        100%
+            transform: translate3d(0, 0, 0) scale(1)
+
+@mixin slideInBottom() 
+    @keyframes slideInBottom
+        0%
+            transform: translate3d(0, 200%, 0) scale(.9)
+            opacity: 0
+        10% 
+            opacity: 0
+        80%
+            opacity: 1
+        100%
+            transform: translate3d(0, 0, 0) scale(1)
+@mixin slideInTop() 
+    @keyframes slideInTop
+        0%
+            transform: translate3d(0, -200%, 0) scale(.9)
+            opacity: 0
+        10% 
+            opacity: 0
+        80%
+            opacity: 1
+        100%
+            transform: translate3d(0, 0, 0) scale(1)
+
+
+
+
+
+
+@mixin slideOutLeft() 
+    @keyframes slideOutLeft
+        0%
+            transform: translate3d(0, 0, 0) scale(1)
+            opacity: 1
+        75%
+            opacity: 1
+        95%
+            opacity: 0
+        100%
+            opacity: 0
+            transform: translate3d(-200%, 0, 0) scale(.9)
+
+@mixin slideOutRight() 
+    @keyframes slideOutRight
+        0%
+            transform: translate3d(0, 0, 0) scale(1)
+            opacity: 1
+        75%
+            opacity: 1
+        95%
+            opacity: 0
+        100%
+            opacity: 0
+            transform: translate3d(200%, 0, 0) scale(.9)
+
+@mixin slideOutBottom() 
+    @keyframes slideOutBottom
+        0%
+            transform: translate3d(0, 0, 0) scale(1)
+            opacity: 1
+        75%
+            opacity: 1
+        95%
+            opacity: 0
+        100%
+            opacity: 0
+            transform: translate3d(0, 200%, 0) scale(.9)
+
+@mixin slideOutTop() 
+    @keyframes slideOutTop
+        0%
+            transform: translate3d(0, 0, 0) scale(1)
+            opacity: 1
+        75%
+            opacity: 1
+        95%
+            opacity: 0
+        100%
+            opacity: 0
+            transform: translate3d(0, -200%, 0) scale(.9)

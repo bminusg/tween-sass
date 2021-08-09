@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>tween.sass</title>
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=" />
+    <link href="css/main.css" type="text/css" rel="stylesheet" />
+    <script src="js/main.js" defer type="module"></script>
+  </head>
+  <body>
+    <section id="home">
+      <div class="container">
+        <h1>tween.sass</h1>
+        <p>
+          tween.sass is a SASS single code-line mixin that delivers the
+          possibility for chaining multiple tween components to one tween
+          animation
+        </p>
+        <span>
+          V 0.1.0 || <a href="#builder" target="_self">TWEEN Builder</a> ||
+          <a href="#slide" target="_self">Components</a> || Documentation on
+          <a href="https://github.com/bminusg/tween-sass" target="_blank">
+            <span>GitHub</span>
+          </a>
+        </span>
+      </div>
+    </section>
+    <section id="builder">
+      <div class="container">
+        <h2>Build your custom Tween</h2>
+        <div id="tweenBuilder" class="preview">
+          <div class="preview--config">
+            <div class="preview--config-input">
+              <div class="preview--config-select__wrapper">
+                <p>Append tween component</p>
+                <select class="preview--config-select">
+                  <option value="" selected disabled hidden>
+                    Choose component
+                  </option>
+                </select>
+              </div>
+              <div class="preview--config-input__wrapper">
+                <p>Define Number of Loops. 0 is equal to an infinte loop</p>
+                <input
+                  type="number"
+                  min="0"
+                  value="1"
+                  class="preview--config-loop"
+                />
+              </div>
+            </div>
+            <ul class="preview--config-timeline">
+              <li class="preview--config-timeline__feedback"></li>
+            </ul>
+            <button class="preview--config-btn__run">Run Tween</button>
+            <button class="preview--config-btn__clear">Clear</button>
+          </div>
+          <div class="preview--window">
+            <div id="preview-examp" class="example"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="slide">
+      <div class="container">
+        <h2>Slide</h2>
+        <article>
+          <div class="example--wrapper">
+            <h5>Slide In Left</h5>
+            <div id="slide--in-left" class="example"></div>
+            <button class="example--btn">Run</button>
+          </div>
+          <div class="example--wrapper">
+            <h5>Slide In Right</h5>
+            <div id="slide--in-right" class="example"></div>
+            <button class="example--btn">Run</button>
+          </div>
+          <div class="example--wrapper">
+            <h5>Slide In Top</h5>
+            <div id="slide--in-top" class="example"></div>
+            <button class="example--btn">Run</button>
+          </div>
+          <div class="example--wrapper">
+            <h5>Slide In Bottom</h5>
+            <div id="slide--in-bottom" class="example"></div>
+            <button class="example--btn">Run</button>
+          </div>
+          <div class="example--wrapper">
+            <h5>Slide Out Left</h5>
+            <div id="slide--out-left" class="example"></div>
+            <button class="example--btn">Run</button>
+          </div>
+          <div class="example--wrapper">
+            <h5>Slide Out Right</h5>
+            <div id="slide--out-right" class="example"></div>
+            <button class="example--btn">Run</button>
+          </div>
+          <div class="example--wrapper">
+            <h5>Slide Out Top</h5>
+            <div id="slide--out-top" class="example"></div>
+            <button class="example--btn">Run</button>
+          </div>
+          <div class="example--wrapper">
+            <h5>Slide Out Bottom</h5>
+            <div id="slide--out-bottom" class="example"></div>
+            <button class="example--btn">Run</button>
+          </div>
+        </article>
+      </div>
+    </section>
+  </body>
+</html>

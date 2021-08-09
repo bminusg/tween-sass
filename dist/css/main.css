@@ -1,0 +1,347 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600&display=swap");
+.preview {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 1fr 1fr;
+}
+@media screen and (orientation: portrait) {
+  .preview {
+    grid-template-columns: 1fr;
+  }
+}
+.preview--window {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.preview--config-timeline {
+  list-style: none;
+  margin: 20px 0;
+  padding: 0;
+  display: flex;
+  position: relative;
+  border-radius: 25px;
+  overflow: hidden;
+}
+.preview--config-timeline__feedback {
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background-color: #050505;
+  bottom: 0;
+  left: 0;
+  margin: 0 10px;
+  z-index: 10;
+}
+.preview--config-timeline__item {
+  background-color: #f2f2f2;
+  border-right: 1px solid #fff;
+  padding: 10px 25px 10px 35px;
+  font-size: 12px;
+  cursor: pointer;
+  max-height: 50px;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.preview--config-timeline__item:hover {
+  background-color: #c6c6c6;
+}
+.preview--config-timeline__item::before {
+  content: "×";
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  margin-top: -10px;
+  font-size: 14px;
+}
+.preview--config-timeline__item:last-child {
+  border-radius: 0 25px 25px 0;
+}
+.preview--config-timeline__item:first-child {
+  border-radius: 25px 0 0 25px;
+}
+.preview--config-trigger {
+  border: 1px solid #f2f2f2;
+  padding: 5px;
+  margin: 0 0 20px 0;
+  cursor: pointer;
+}
+.preview--config-trigger[data-active=true] {
+  border: 1px solid #f00;
+}
+
+article {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+@media screen and (orientation: portrait) {
+  article {
+    grid-template-columns: 1fr;
+  }
+}
+
+section {
+  width: 100%;
+}
+
+#home {
+  background-color: #f2f2f2;
+}
+
+.example {
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+  background-color: #050505;
+}
+.example--btn {
+  margin: 20px 0 0 0;
+}
+.example--wrapper {
+  border: 1px solid #f2f2f2;
+  border-radius: 6px;
+  padding: 0 40px 40px;
+}
+@media screen and (orientation: portrait) {
+  .example--wrapper {
+    padding: 0 20px 20px;
+  }
+}
+
+.container {
+  width: calc(100% - 40px);
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 40px 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Raleway", sans-serif;
+  font-size: 15px;
+  line-height: 1.3;
+}
+body h1, body h2, body h3, body h4, body h5 {
+  margin: 3rem 0 1.38rem;
+  font-weight: 600;
+}
+body h1 {
+  margin: 0;
+  font-size: 3.052rem;
+}
+body h2 {
+  font-size: 2.441rem;
+}
+body h3 {
+  font-size: 1.953rem;
+}
+body h4 {
+  font-size: 1.563rem;
+}
+body h5 {
+  font-size: 1.25rem;
+}
+
+#slide--in-left {
+  animation-name: slideInLeft;
+  animation-duration: 0.5s;
+  animation-timing-function: cubic-bezier(0.25, 1, 0.5, 1);
+  animation-iteration-count: 1;
+  animation-direction: normal;
+  animation-fill-mode: forwards;
+  animation-delay: 0s;
+}
+@keyframes slideInLeft {
+  0% {
+    transform: translate3d(-200%, 0, 0) scale(0.9);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+#slide--in-right {
+  animation-name: slideInRight;
+  animation-duration: 0.5s;
+  animation-timing-function: cubic-bezier(0.25, 1, 0.5, 1);
+  animation-iteration-count: 1;
+  animation-direction: normal;
+  animation-fill-mode: forwards;
+  animation-delay: 0s;
+}
+@keyframes slideInRight {
+  0% {
+    transform: translate3d(200%, 0, 0) scale(0.9);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+#slide--in-bottom {
+  animation-name: slideInBottom;
+  animation-duration: 0.5s;
+  animation-timing-function: cubic-bezier(0.25, 1, 0.5, 1);
+  animation-iteration-count: 1;
+  animation-direction: normal;
+  animation-fill-mode: forwards;
+  animation-delay: 0s;
+}
+@keyframes slideInBottom {
+  0% {
+    transform: translate3d(0, 200%, 0) scale(0.9);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+#slide--in-top {
+  animation-name: slideInTop;
+  animation-duration: 0.5s;
+  animation-timing-function: cubic-bezier(0.25, 1, 0.5, 1);
+  animation-iteration-count: 1;
+  animation-direction: normal;
+  animation-fill-mode: forwards;
+  animation-delay: 0s;
+}
+@keyframes slideInTop {
+  0% {
+    transform: translate3d(0, -200%, 0) scale(0.9);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+#slide--out-left {
+  animation-name: slideOutLeft;
+  animation-duration: 0.5s;
+  animation-timing-function: cubic-bezier(0.64, 0, 0.78, 0);
+  animation-iteration-count: 1;
+  animation-direction: normal;
+  animation-fill-mode: forwards;
+  animation-delay: 0s;
+}
+@keyframes slideOutLeft {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 1;
+  }
+  75% {
+    opacity: 1;
+  }
+  95% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(-200%, 0, 0) scale(0.9);
+  }
+}
+#slide--out-right {
+  animation-name: slideOutRight;
+  animation-duration: 0.5s;
+  animation-timing-function: cubic-bezier(0.64, 0, 0.78, 0);
+  animation-iteration-count: 1;
+  animation-direction: normal;
+  animation-fill-mode: forwards;
+  animation-delay: 0s;
+}
+@keyframes slideOutRight {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 1;
+  }
+  75% {
+    opacity: 1;
+  }
+  95% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(200%, 0, 0) scale(0.9);
+  }
+}
+#slide--out-bottom {
+  animation-name: slideOutBottom;
+  animation-duration: 0.5s;
+  animation-timing-function: cubic-bezier(0.64, 0, 0.78, 0);
+  animation-iteration-count: 1;
+  animation-direction: normal;
+  animation-fill-mode: forwards;
+  animation-delay: 0s;
+}
+@keyframes slideOutBottom {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 1;
+  }
+  75% {
+    opacity: 1;
+  }
+  95% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(0, 200%, 0) scale(0.9);
+  }
+}
+#slide--out-top {
+  animation-name: slideOutTop;
+  animation-duration: 0.5s;
+  animation-timing-function: cubic-bezier(0.64, 0, 0.78, 0);
+  animation-iteration-count: 1;
+  animation-direction: normal;
+  animation-fill-mode: forwards;
+  animation-delay: 0s;
+}
+@keyframes slideOutTop {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 1;
+  }
+  75% {
+    opacity: 1;
+  }
+  95% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(0, -200%, 0) scale(0.9);
+  }
+}
+
+/*# sourceMappingURL=main.css.map */

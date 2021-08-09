@@ -1,0 +1,24 @@
+{
+  "name": "tween-sass",
+  "version": "0.1.0",
+  "description": "A shorthand SASS mixin for your animation tweenings",
+  "scripts": {
+    "develop": "sass --watch src/main.sass dist/css/main.css"
+  },
+  "main": "index.sass",
+  "keywords": [
+    "sass",
+    "animation",
+    "tweening",
+    "slide"
+  ],
+  "author": {
+    "name": "Benny Gebauer",
+    "email": "hey@bminusg.de",
+    "url": "http://www.bminusg.de"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.35.2"
+  }
+}

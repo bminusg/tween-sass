@@ -1,0 +1,64 @@
+@use "sass:list"
+@use "sass:map"
+@use "defineKeyframes" as *
+    
+// ANIMATE MIXIN
+@mixin tween($tweens...)
+
+    $props: name, duration, timing-function, iteration-count, direction, fill-mode
+    $propDefaults: wait, 1s, linear, 1, normal, forwards
+    $propLength: length($props) + 1
+    $yolo: ("name": null,"duration": null,"timing-function": null,"iteration-count": null,"direction": null,"fill-mode": null)
+
+    // OUTER TWEEN LOOP
+    @each $tween in $tweens
+        
+        $maxTweenIDX: length($tween)
+
+        // INNER CUSTOM PROPERTY LOOP
+        @for $i from 1 to $propLength
+
+            $value: list.nth($propDefaults, $i)
+            $prop: list.nth($props, $i)
+
+            // OVERWRITE DEFAULT VALUE IF NAME IS PART OF OF KEYFRAME LIB
+            @if $i > 1 and map.has-key($keyframeDefaults, list.nth($tween, 1))
+                $defaultValues: map.get($keyframeDefaults,list.nth($tween, 1))
+
+                @if $i <= length($defaultValues) + 1
+                    $value: list.nth($defaultValues, $i - 1)                
+
+            // OVERWRITE DEFAULT VALUE IF CUSTOM VALUE EXCIST
+            @if $i <= $maxTweenIDX 
+                $value: list.nth($tween, $i)
+
+            @if map.get($yolo,$prop) != null                
+                $value: list.append(map.get($yolo,$prop), $value, $separator: comma)
+
+            $yolo: map.set($yolo,$prop, $value)
+
+    // CALCULATE DELAYS FOR CHAINING
+    $delay: 0
+    $durations: map.get($yolo, duration)
+
+    @for $i from 0 to length($durations)
+
+        @if $i == 0
+            $yolo: map.set($yolo,delay, 0s)
+        @else 
+            $delay: $delay + list.nth($durations, $i)
+            $value: list.append(map.get($yolo, delay), $delay, $separator: comma)
+            $yolo: map.set($yolo,delay, $value)
+
+
+    // SET PROPERTIES TO CSS SELCETOR
+    @each $key, $value in $yolo
+        animation-#{$key}: $value
+
+    // UPDATE ANIMATION LIST
+    @include defineKeyframes(map.get($yolo, name))
+    
+    
+
+
+
