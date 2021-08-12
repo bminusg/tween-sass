@@ -1,6 +1,6 @@
 {
   "name": "tween-sass",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A shorthand SASS mixin for your animation tweenings",
   "scripts": {
     "develop": "sass --watch src/main.sass dist/css/main.css"

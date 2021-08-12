@@ -21,21 +21,17 @@
   padding: 0;
   display: flex;
   position: relative;
-  border-radius: 25px;
-  overflow: hidden;
 }
 .preview--config-timeline__feedback {
   position: absolute;
   width: 0;
-  height: 2px;
+  height: 100%;
   background-color: #050505;
   bottom: 0;
   left: 0;
-  margin: 0 10px;
-  z-index: 10;
 }
 .preview--config-timeline__item {
-  background-color: #f2f2f2;
+  background-color: rgba(242, 242, 242, 0.5);
   border-right: 1px solid #fff;
   padding: 10px 25px 10px 35px;
   font-size: 12px;
@@ -55,12 +51,6 @@
   top: 50%;
   margin-top: -10px;
   font-size: 14px;
-}
-.preview--config-timeline__item:last-child {
-  border-radius: 0 25px 25px 0;
-}
-.preview--config-timeline__item:first-child {
-  border-radius: 25px 0 0 25px;
 }
 .preview--config-trigger {
   border: 1px solid #f2f2f2;
@@ -85,6 +75,7 @@ article {
 
 section {
   width: 100%;
+  border-bottom: 1px solid #f2f2f2;
 }
 
 #home {
@@ -145,6 +136,24 @@ body h4 {
 }
 body h5 {
   font-size: 1.25rem;
+}
+
+#wait {
+  animation-name: wait;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+  animation-fill-mode: forwards;
+  animation-delay: 0s;
+}
+@keyframes wait {
+  0% {
+    visibility: visible;
+  }
+  100% {
+    visibility: visible;
+  }
 }
 
 #slide--in-left {

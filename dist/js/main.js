@@ -29,7 +29,7 @@ class Preview {
     // RUN TWEEN BUILDER
     this.Builder();
 
-    // BTN EVENT LISTENER
+    // BTN RUN EVENT LISTENER
     this.run();
   }
 
@@ -41,10 +41,6 @@ class Preview {
     // ADD CLEAR BTN
     const btnClear = document.querySelector(".preview--config-btn__clear");
     btnClear.addEventListener("click", () => this.removeAllTweenComponents());
-
-    // ADD RUN BTN
-    const runClear = document.querySelector(".preview--config-btn__run");
-    runClear.addEventListener("click", () => this.runTween());
 
     // ADD SELECT EVENT LISTENER
     select.addEventListener("change", (event) => {
@@ -74,6 +70,10 @@ class Preview {
   removeAllTweenComponents() {
     this.tweens = [];
     this.clearTweenComponent();
+    this.resetExample();
+
+    // UNSELECT INPUT FIELD
+    this.clearSelectComponent();
   }
 
   removeTweenComponent(target) {
@@ -86,6 +86,9 @@ class Preview {
 
     this.tweens.splice(index, 1);
     this.drawTweenComponent();
+
+    // UNSELECT
+    if (this.tweens.length === 0) this.clearSelectComponent();
   }
 
   clearTweenComponent() {
@@ -97,52 +100,103 @@ class Preview {
     this.timeline.removeAttribute("style");
   }
 
+  clearSelectComponent() {
+    const select = document.querySelector(".preview--config-select");
+    select.selectedIndex = -1;
+  }
+
   drawTweenComponent() {
     this.clearTweenComponent();
 
     for (const item of this.tweens) {
       const values = item.split(" ");
+      const flex = this.tweens.length > 1 ? parseFloat(values[1]) : 1;
 
       // BUILD TIMELINE PREVIEW
       const li = document.createElement("li");
       li.classList.add("preview--config-timeline__item");
       li.innerHTML = values[0] + ", " + values[1];
-      li.style.flex = parseFloat(values[1]);
+      li.style.flex = flex;
       li.addEventListener("click", (e) => this.removeTweenComponent(e.target));
 
       this.timelineWrapper.appendChild(li);
     }
   }
 
-  runTween() {
+  initTween() {
     const example = document.getElementById("preview-examp");
-    const tweenChain = this.tweens.join(", ");
-    const name = this.tweens.map((tween) => tween.split(" ")[1]);
-    const fillMode = this.tweens.map(() => "forwards").join(", ");
     const durations = this.tweens.map((tween) => tween.split(" ")[1]);
-    const delay = this.calcDelay(durations);
-    let totalDuration = 0;
+    const iterationCount = this.calcIterationCount();
 
-    // RESET
-    example.removeAttribute("style");
-    this.timeline.removeAttribute("style");
+    // RESET IDX
+    let loopIDX = 0;
+    let chainIDX = 0;
 
-    setTimeout(() => {
-      // SET ANAIMTIONS
-      example.style.animation = tweenChain;
-      example.style.animationDelay = delay;
-      example.style.animationFillMode = fillMode;
-      // TIMELINE FEEDBACK
-      durations.forEach((dur) => (totalDuration += parseFloat(dur)));
-      this.timeline.style.transition = "width " + totalDuration + "s linear";
-      this.timeline.style.width = "calc(100% - 20px)";
-    }, 1);
+    // CLONE FOR REMOVING EVENT LISTENERS
+    const newExample = example.cloneNode(true);
+    example.parentNode.replaceChild(newExample, example);
+
+    // TWEEN SETUP OPTIONS
+    const setup = {
+      example: newExample,
+      tweenChain: this.tweens.join(", "),
+      durations: durations,
+      delay: this.calcDelay(durations),
+      fillMode: this.tweens.map(() => "forwards").join(", "),
+    };
+
+    // ANIMATION EVENT LISTENERS
+    newExample.addEventListener("animationstart", () => {
+      chainIDX++;
+    });
+
+    newExample.addEventListener("animationend", () => {
+      // RESTART TWEEN IN CASE LOOP NUMBER IS NOT 1
+      if (chainIDX >= this.tweens.length && iterationCount !== 1) {
+        chainIDX = 0;
+        loopIDX++;
+
+        if (iterationCount !== 0 && loopIDX >= iterationCount)
+          return (loopIDX = 0);
+
+        this.runTween(setup);
+      }
+    });
+
+    // RUN TWEEN
+    this.runTween(setup);
   }
 
-  resetExamples() {
+  runTween(setup) {
+    // CALC TOTAL TWEEN DURATION
+    let totalDuration = 0;
+    setup.durations.forEach((dur) => {
+      totalDuration += parseFloat(dur);
+    });
+
+    // RESET EXAMPLE
+    this.resetExample();
+
+    // START ANIMATION
+    setup.example.style.animation = setup.tweenChain;
+    setup.example.style.animationDelay = setup.delay;
+    setup.example.style.animationFillMode = setup.fillMode;
+
+    // START TIMELINE
+    this.timeline.style.transition = "width " + totalDuration + "s linear";
+    this.timeline.style.width = "100%";
+  }
+
+  resetExample() {
     // RESET EXAMPLE ANIMATION
     const example = document.getElementById("preview-examp");
-    example.style.animationName = "none";
+    example.style.animation = null;
+    example.style.animationDelay = null;
+    example.style.animationFillMode = null;
+
+    // REFLOW BROWSER METHOD FOR RESET
+    // AS ALTERNATIVE TRY TO USE https://developer.mozilla.org/en-US/docs/Web/API/window/requestAnimationFrame
+    void example.offsetWidth;
 
     // RESET TRIGGER STATE
     const triggers = document.querySelectorAll(".preview--config-trigger");
@@ -150,6 +204,7 @@ class Preview {
 
     // RESET TIMELINE
     this.timeline.removeAttribute("style");
+    void this.timeline.offsetWidth;
   }
 
   calcDelay(durations) {
@@ -169,14 +224,24 @@ class Preview {
     return value;
   }
 
+  calcIterationCount() {
+    const input = document.querySelector(".preview--config-loop");
+    return parseInt(input.value);
+  }
+
   run() {
     this.btns.forEach((btn, idx) => {
       btn.onclick = () => {
+        const isPreviewBuilder =
+          btn.className.indexOf("preview--config-btn__run") > -1 ? true : false;
+
+        if (isPreviewBuilder) return this.initTween();
+
         let property = getComputedStyle(this.examples[idx]).animationName;
-        this.examples[idx + 1].style.animationName = "none";
+        this.examples[idx].style.animationName = "none";
 
         setTimeout(() => {
-          this.examples[idx + 1].style.animationName = property;
+          this.examples[idx].style.animationName = property;
         }, 100);
       };
     });
