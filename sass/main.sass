@@ -3,6 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600&display=swap')
 
 $primary-color: #050505
+$secondary-color: #f2f2f2
 
 article
     display: grid
@@ -42,12 +43,22 @@ section
     margin: 0 auto
     padding: 40px 0
 
+code
+    display: block
+    background-color: $secondary-color
+    padding: 5px
+    margin: 20px 0
+    font-family: Courier New, Courier, monospace
+    font-size: 12px
+    border-radius: 6px
+
 // FONT SETUP
 body
     margin: 0
     padding: 0
     box-sizing: border-box
     font-family: 'Raleway', sans-serif
+    color: $primary-color
     font-size: 15px
     line-height: 1.3
 
@@ -72,8 +83,12 @@ body
         font-size: 1.25rem
 
 // INIT ANIMATIONS
-#wait
-    @include tween(wait)
+#preview
+    &--leftRight
+        @include tween(slideInLeft, wait 2.5s, slideOutRight)
+    &--topBottom
+        @include tween(slideInTop, wait 2.5s, slideOutBottom)
+
 #slide
     &--in
         &-left

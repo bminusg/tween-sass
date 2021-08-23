@@ -19,18 +19,23 @@
           animation
         </p>
         <span>
-          v 0.1.1 || <a href="#builder" target="_self">TWEEN Builder</a> ||
-          <a href="#slide" target="_self">Components</a> || Documentation on
-          <a href="https://github.com/bminusg/tween-sass" target="_blank">
-            <span>GitHub</span>
-          </a>
+          v 0.1.2 || <a href="#examples" target="_self">Examples</a> ||
+          <a href="#slide" target="_self">Components</a> ||
+          <a href="https://github.com/bminusg/tween-sass" target="_blank"
+            >Documentation</a
+          >
         </span>
       </div>
     </section>
-    <section id="builder">
+    <!--section id="builder">
       <div class="container">
         <h2>Build your custom Tween</h2>
         <div id="tweenBuilder" class="preview">
+          <div class="preview--window">
+            <div id="preview-examp" class="example" data-loop="0">
+              <p>YOLOLORD</p>
+            </div>
+          </div>
           <div class="preview--config">
             <div class="preview--config-input">
               <div class="preview--config-select__wrapper">
@@ -59,10 +64,28 @@
             </button>
             <button class="preview--config-btn__clear">Clear</button>
           </div>
-          <div class="preview--window">
-            <div id="preview-examp" class="example"></div>
-          </div>
         </div>
+      </div>
+    </section-->
+
+    <section id="examples">
+      <div class="container">
+        <h2>Examples</h2>
+        <article>
+          <div class="example--wrapper">
+            <h5>Slide In Left - Wait - Slide Out Right</h5>
+            <code>@include tween(slideInLeft, wait 2.5s, slideOutRight)</code>
+            <div id="preview--leftRight" class="example"></div>
+            <button class="example--btn">Run</button>
+          </div>
+
+          <div class="example--wrapper">
+            <h5>Slide In Top - Wait - Slide Out Bottom</h5>
+            <code>@include tween(slideInTop, wait 2.5s, slideOutBottom)</code>
+            <div id="preview--topBottom" class="example"></div>
+            <button class="example--btn">Run</button>
+          </div>
+        </article>
       </div>
     </section>
     <section id="slide">
@@ -71,42 +94,62 @@
         <article>
           <div class="example--wrapper">
             <h5>Slide In Left</h5>
-            <div id="slide--in-left" class="example"></div>
+            <div id="slide--in-left" class="example" data-trigger="click"></div>
             <button class="example--btn">Run</button>
           </div>
           <div class="example--wrapper">
             <h5>Slide In Right</h5>
-            <div id="slide--in-right" class="example"></div>
+            <div
+              id="slide--in-right"
+              class="example"
+              data-trigger="click"
+            ></div>
             <button class="example--btn">Run</button>
           </div>
           <div class="example--wrapper">
             <h5>Slide In Top</h5>
-            <div id="slide--in-top" class="example"></div>
+            <div id="slide--in-top" class="example" data-trigger="click"></div>
             <button class="example--btn">Run</button>
           </div>
           <div class="example--wrapper">
             <h5>Slide In Bottom</h5>
-            <div id="slide--in-bottom" class="example"></div>
+            <div
+              id="slide--in-bottom"
+              class="example"
+              data-trigger="click"
+            ></div>
             <button class="example--btn">Run</button>
           </div>
           <div class="example--wrapper">
             <h5>Slide Out Left</h5>
-            <div id="slide--out-left" class="example"></div>
+            <div
+              id="slide--out-left"
+              class="example"
+              data-trigger="click"
+            ></div>
             <button class="example--btn">Run</button>
           </div>
           <div class="example--wrapper">
             <h5>Slide Out Right</h5>
-            <div id="slide--out-right" class="example"></div>
+            <div
+              id="slide--out-right"
+              class="example"
+              data-trigger="click"
+            ></div>
             <button class="example--btn">Run</button>
           </div>
           <div class="example--wrapper">
             <h5>Slide Out Top</h5>
-            <div id="slide--out-top" class="example"></div>
+            <div id="slide--out-top" class="example" data-trigger="click"></div>
             <button class="example--btn">Run</button>
           </div>
           <div class="example--wrapper">
             <h5>Slide Out Bottom</h5>
-            <div id="slide--out-bottom" class="example"></div>
+            <div
+              id="slide--out-bottom"
+              class="example"
+              data-trigger="click"
+            ></div>
             <button class="example--btn">Run</button>
           </div>
         </article>

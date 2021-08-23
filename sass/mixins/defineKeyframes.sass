@@ -1,0 +1,55 @@
+@use "sass:list"
+@use "sass:map"
+@use "../keyframes/slide" as slide
+
+$keyframes: null
+$keyframeDefaults: ("slideInLeft": 0.6s cubic-bezier(0.25, 1, 0.5, 1),"slideInRight": 0.6s cubic-bezier(0.25, 1, 0.5, 1),"slideInTop": 0.6s cubic-bezier(0.25, 1, 0.5, 1),"slideInBottom": 0.6s cubic-bezier(0.25, 1, 0.5, 1),"slideOutLeft": 0.6s cubic-bezier(0.64, 0, 0.78, 0),"slideOutRight": 0.6s cubic-bezier(0.5, 0, 0.75, 0),"slideOutTop": 0.6s cubic-bezier(0.64, 0, 0.78, 0),"slideOutBottom": 0.6s cubic-bezier(0.64, 0, 0.78, 0),)
+
+@mixin defineKeyframes($config)
+
+    // RESET ANIMATION PREVENTS CHOPPY STYLES
+    -webkit-transform: transform3d(0,0,0)
+    transform: transform3d(0,0,0)
+    -webkit-backface-visibility: hidden
+    backface-visibility: hidden
+    overflow-x: hidden
+
+    $names: map.get($config, "name")
+    $duration: map.get($config, "totalDuration")
+
+    // BUILD ANIMATION NAME
+    $animationName: null
+    @for $i from 1 to length($names) + 1
+        @if $animationName == null
+            $animationName: list.nth($names, $i)
+        @else
+            $animationName: $animationName + "_" + list.nth($names, $i)
+
+    // BUILD KEYFRAMES
+    @keyframes #{$animationName}
+        @for $i from 1 to length($names) + 1
+            $name: list.nth($names, $i )
+            $timingFunction: list.nth(map.get($config, "timing-function"), $i )
+            $startFrame: list.nth(map.get($config, "keyframes"), $i )
+            $endFrame: list.nth(map.get($config, "keyframes"), $i + 1 )
+
+            // SLIDE
+            @if $name == "slideInLeft"
+                @include slide.InLeft($startFrame, $endFrame, $timingFunction)
+            @if $name == "slideInRight"
+                @include slide.InRight($startFrame, $endFrame, $timingFunction)
+            @if $name == "slideInTop"
+                @include slide.InTop($startFrame, $endFrame, $timingFunction)
+            @if $name == "slideInBottom"
+                @include slide.InBottom($startFrame, $endFrame, $timingFunction)
+            @if $name == "slideOutLeft"
+                @include slide.OutLeft($startFrame, $endFrame, $timingFunction)
+            @if $name == "slideOutRight"
+                @include slide.OutRight($startFrame, $endFrame, $timingFunction)
+            @if $name == "slideOutTop"
+                @include slide.OutTop($startFrame, $endFrame, $timingFunction)
+            @if $name == "slideOutBottom"
+                @include slide.OutBottom($startFrame, $endFrame, $timingFunction)
+
+    &.is--tweening
+        animation: $animationName $duration linear 0s forwards

@@ -1,0 +1,67 @@
+@use "sass:list"
+@use "sass:map"
+@use "sass:math"
+@use "defineKeyframes" as *
+
+@mixin tween($tweens...)
+
+    // PART 01: DEFINE GLOBAL CONFIG
+
+    $props: name, duration, timing-function, iteration-count, direction, fill-mode
+    $propDefaults: wait, 1s, linear, 1, normal, forwards
+    $propLength: length($props) + 1
+    $config: ("name": null,"duration": null,"timing-function": null,"iteration-count": null,"direction": null,"fill-mode": null, "totalDuration": 0, "keyframes": 0%)
+
+    @each $tween in $tweens
+
+        $maxTweenIDX: length($tween)
+
+        // INNER CUSTOM PROPERTY LOOP
+        @for $i from 1 to $propLength
+
+            $value: list.nth($propDefaults, $i)
+            $prop: list.nth($props, $i)
+
+            // OVERWRITE DEFAULT VALUE IF NAME IS PART OF OF KEYFRAME LIB
+            @if $i > 1 and map.has-key($keyframeDefaults, list.nth($tween, 1))
+                $defaultValues: map.get($keyframeDefaults,list.nth($tween, 1))
+
+                @if $i <= length($defaultValues) + 1
+                    $value: list.nth($defaultValues, $i - 1)
+
+            // OVERWRITE DEFAULT VALUE IF CUSTOM VALUE EXCIST
+            @if $i <= $maxTweenIDX
+                $value: list.nth($tween, $i)
+
+            // CALC TOTAL DURATION
+            @if $i == 2
+                $totalDuration: map.get($config, "totalDuration") + $value
+                $config: map.set($config, "totalDuration", $totalDuration)
+
+            // CONCAT VALUE TO LIST VALUES
+            @if map.get($config,$prop) != null
+                $value: list.append(map.get($config,$prop), $value, $separator: comma)
+
+            $config: map.set($config, $prop, $value)
+
+    // CALC START AND END KEYFRAMES AND
+    @for $i from 1 to length($tweens) + 1
+        $totalDuration: map.get($config, "totalDuration")
+        $keyframes: map.get($config, "keyframes")
+        $duration: list.nth(map.get($config, "duration"), $i)
+        $amount: math.percentage(math.div($duration, $totalDuration))
+        $amount: math.round($amount)
+
+        // SETTING FIRST KEYFRAME
+        @if $i == 1
+            $config: map.set($config, "keyframes", list.append($keyframes, $amount))
+
+        @if $i > 1
+            $previousFrame: list.nth($keyframes, $i)
+            $config: map.set($config, "keyframes", list.append($keyframes, $amount + $previousFrame))
+
+        // SETTING LAST FRAME
+        @if $i == length($tweens)
+            $config: map.set($config, "keyframes", list.append($keyframes, 100%))
+
+    @include defineKeyframes($config)
