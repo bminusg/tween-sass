@@ -1,18 +1,12 @@
 @use "sass:list"
 @use "sass:map"
+@use "sass:selector"
 @use "../keyframes/slide" as slide
 
 $keyframes: null
 $keyframeDefaults: ("slideInLeft": 0.6s cubic-bezier(0.25, 1, 0.5, 1),"slideInRight": 0.6s cubic-bezier(0.25, 1, 0.5, 1),"slideInTop": 0.6s cubic-bezier(0.25, 1, 0.5, 1),"slideInBottom": 0.6s cubic-bezier(0.25, 1, 0.5, 1),"slideOutLeft": 0.6s cubic-bezier(0.64, 0, 0.78, 0),"slideOutRight": 0.6s cubic-bezier(0.5, 0, 0.75, 0),"slideOutTop": 0.6s cubic-bezier(0.64, 0, 0.78, 0),"slideOutBottom": 0.6s cubic-bezier(0.64, 0, 0.78, 0),)
 
 @mixin defineKeyframes($config)
-
-    // RESET ANIMATION PREVENTS CHOPPY STYLES
-    -webkit-transform: transform3d(0,0,0)
-    transform: transform3d(0,0,0)
-    -webkit-backface-visibility: hidden
-    backface-visibility: hidden
-    overflow-x: hidden
 
     $names: map.get($config, "name")
     $duration: map.get($config, "totalDuration")
@@ -51,5 +45,9 @@ $keyframeDefaults: ("slideInLeft": 0.6s cubic-bezier(0.25, 1, 0.5, 1),"slideInRi
             @if $name == "slideOutBottom"
                 @include slide.OutBottom($startFrame, $endFrame, $timingFunction)
 
-    &.is--tweening
-        animation: $animationName $duration linear 0s forwards
+    // DEFINE ANIMATION PROPS
+    @at-root .is--tweening #{&}
+        animation-name: $animationName
+        animation-duration: $duration
+        animation-delay: 0s
+        animation-fill-mode: forwards

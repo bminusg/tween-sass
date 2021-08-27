@@ -4,150 +4,150 @@
 
 @mixin InLeft($start: 0%, $end: 50%, $timingFunction: cubic-bezier(0.25, 1, 0.5, 1))
 
-    $frame_01: ruleOfThree(10%, $end) + $start
-    $frame_02: ruleOfThree(50%, $end) + $start
+    $frame_01: ruleOfThree(10%, $start, $end)
+    $frame_02: ruleOfThree(30%, $start, $end)
 
     #{$start}
         animation-timing-function: $timingFunction
-        transform: translate3d(-200%, 0, 0) scale(.9)
+        transform: matrix(0.9, 0, 0, 0.9, -150, 0)
         opacity: 0
     #{$frame_01}
         opacity: 0
     #{$frame_02}
         opacity: 1
     #{$end}
-        transform: translate3d(0, 0, 0) scale(1)
+        transform: matrix(1,0,0,1,0,0)
         opacity: 1
 
 // SLIDE IN TOP
 
 @mixin InTop($start: 0%, $end: 50%, $timingFunction: cubic-bezier(0.25, 1, 0.5, 1))
 
-    $frame_01: ruleOfThree(10%, $end) + $start
-    $frame_02: ruleOfThree(50%, $end) + $start
+    $frame_01: ruleOfThree(10%, $start, $end)
+    $frame_02: ruleOfThree(50%, $start, $end)
 
     #{$start}
         animation-timing-function: $timingFunction
-        transform: translate3d(0, -200%, 0) scale(.9)
+        transform: matrix(0.9, 0, 0, 0.9, 0, -150)
         opacity: 0
     #{$frame_01}
         opacity: 0
     #{$frame_02}
         opacity: 1
     #{$end}
-        transform: translate3d(0, 0, 0) scale(1)
+        transform: matrix(1,0,0,1,0,0)
         opacity: 1
 
 // SLIDE IN RIGHT
 
 @mixin InRight($start: 0%, $end: 50%, $timingFunction: cubic-bezier(0.25, 1, 0.5, 1))
 
-    $frame_01: ruleOfThree(10%, $end) + $start
-    $frame_02: ruleOfThree(50%, $end) + $start
+    $frame_01: ruleOfThree(10%, $start, $end)
+    $frame_02: ruleOfThree(50%, $start, $end)
 
     #{$start}
         animation-timing-function: $timingFunction
-        transform: translate3d(200%, 0, 0) scale(.9)
+        transform: matrix(0.9, 0, 0, 0.9, 150, 0)
         opacity: 0
     #{$frame_01}
         opacity: 0
     #{$frame_02}
         opacity: 1
     #{$end}
-        transform: translate3d(0, 0, 0) scale(1)
+        transform: matrix(1,0,0,1,0,0)
         opacity: 1
 
 // SLIDE IN BOTTOM
 
 @mixin InBottom($start: 0%, $end: 50%, $timingFunction: cubic-bezier(0.25, 1, 0.5, 1))
 
-    $frame_01: ruleOfThree(10%, $end) + $start
-    $frame_02: ruleOfThree(50%, $end) + $start
+    $frame_01: ruleOfThree(10%, $start, $end)
+    $frame_02: ruleOfThree(50%, $start, $end)
 
     #{$start}
         animation-timing-function: $timingFunction
-        transform: translate3d(0, 200%, 0) scale(.9)
+        transform: matrix(0.9, 0, 0, 0.9, 0, 150)
         opacity: 0
     #{$frame_01}
         opacity: 0
     #{$frame_02}
         opacity: 1
     #{$end}
-        transform: translate3d(0, 0, 0) scale(1)
+        transform: matrix(1,0,0,1,0,0)
         opacity: 1
 
 // SLIDE OUT LEFT
 
 @mixin OutLeft($start: 0%, $end: 50%, $timingFunction: cubic-bezier(0.5, 0, 0.75, 0))
 
-    $frame_01: ruleOfThree(90%, $end) + $start
-    $frame_02: ruleOfThree(95%, $end) + $start
+    $frame_01: ruleOfThree(90%, $start, $end)
+    $frame_02: ruleOfThree(95%, $start, $end)
 
     #{$start}
         animation-timing-function: $timingFunction
-        transform: translate3d(0, 0, 0) scale(1)
+        transform: matrix(1,0,0,1,0,0)
         opacity: 1
     #{$frame_01}
         opacity: 1
     #{$frame_02}
         opacity: 0
     #{$end}
-        transform: translate3d(-200%, 0, 0) scale(.9)
+        transform: matrix(0.9, 0, 0, 0.9, -150, 0)
         opacity: 0
 
 // SLIDE OUT TOP
 
 @mixin OutTop($start: 0%, $end: 50%, $timingFunction: cubic-bezier(0.5, 0, 0.75, 0))
 
-    $frame_01: ruleOfThree(90%, $end) + $start
-    $frame_02: ruleOfThree(95%, $end) + $start
+    $frame_01: ruleOfThree(90%, $start, $end)
+    $frame_02: ruleOfThree(95%, $start, $end)
 
     #{$start}
         animation-timing-function: $timingFunction
-        transform: translate3d(0, 0, 0) scale(1)
+        transform: matrix(1,0,0,1,0,0)
         opacity: 1
     #{$frame_01}
         opacity: 1
     #{$frame_02}
         opacity: 0
     #{$end}
-        transform: translate3d(0, -200%, 0) scale(.9)
+        transform: matrix(0.9, 0, 0, 0.9, 0, -150)
         opacity: 0
 
 // SLIDE OUT RIGHT
 
 @mixin OutRight($start: 0%, $end: 50%, $timingFunction: cubic-bezier(0.5, 0, 0.75, 0))
 
-    $frame_01: ruleOfThree(90%, $end) + $start
-    $frame_02: ruleOfThree(95%, $end) + $start
+    $frame_01: ruleOfThree(90%, $start, $end)
+    $frame_02: ruleOfThree(95%, $start, $end)
 
     #{$start}
         animation-timing-function: $timingFunction
-        transform: translate3d(0, 0, 0) scale(1)
+        transform: matrix(1,0,0,1,0,0)
         opacity: 1
     #{$frame_01}
         opacity: 1
     #{$frame_02}
         opacity: 0
     #{$end}
-        transform: translate3d(200%, 0, 0) scale(.9)
+        transform: matrix(0.9, 0, 0, 0.9, 150, 0)
         opacity: 0
 
 // SLIDE OUT BOTTOM
 
 @mixin OutBottom($start: 0%, $end: 50%, $timingFunction: cubic-bezier(0.5, 0, 0.75, 0))
 
-    $frame_01: ruleOfThree(90%, $end) + $start
-    $frame_02: ruleOfThree(95%, $end) + $start
+    $frame_01: ruleOfThree(90%, $start, $end)
+    $frame_02: ruleOfThree(95%, $start, $end)
 
     #{$start}
         animation-timing-function: $timingFunction
-        transform: translate3d(0, 0, 0) scale(1)
+        transform: matrix(1,0,0,1,0,0)
         opacity: 1
     #{$frame_01}
         opacity: 1
     #{$frame_02}
         opacity: 0
     #{$end}
-        transform: translate3d(0, 200%, 0) scale(.9)
+        transform: matrix(0.9, 0, 0, 0.9, 0, 150)
         opacity: 0

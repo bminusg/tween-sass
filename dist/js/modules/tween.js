@@ -45,11 +45,11 @@ class Tween {
   }
 
   animate(elem) {
-    //elem.removeAttribute("style");
-    elem.classList.remove("is--tweening");
+    const parent = elem.parentNode;
+
+    parent.classList.remove("is--tweening");
     void elem.offsetWidth;
-    //elem.style.animationPlayState = "running, paused, paused";
-    elem.classList.add("is--tweening");
+    parent.classList.add("is--tweening");
   }
 
   resetTween() {}

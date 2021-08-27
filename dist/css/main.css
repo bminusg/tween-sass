@@ -112,12 +112,12 @@ section {
 }
 
 code {
-  display: block;
+  display: inline-block;
   background-color: #f2f2f2;
   padding: 5px;
-  margin: 20px 0;
+  margin: 0 0 20px 0;
   font-family: Courier New, Courier, monospace;
-  font-size: 12px;
+  font-size: 11px;
   border-radius: 6px;
 }
 
@@ -151,59 +151,49 @@ body h5 {
   font-size: 1.25rem;
 }
 
-#preview--leftRight {
-  -webkit-transform: transform3d(0, 0, 0);
-  transform: transform3d(0, 0, 0);
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  overflow-x: hidden;
-}
 @keyframes slideInLeft_wait_slideOutRight {
   0% {
     animation-timing-function: cubic-bezier(0.25, 1, 0.5, 1);
-    transform: translate3d(-200%, 0, 0) scale(0.9);
+    transform: matrix(0.9, 0, 0, 0.9, -150, 0);
     opacity: 0;
   }
   1.6% {
     opacity: 0;
   }
-  8% {
+  4.8% {
     opacity: 1;
   }
   16% {
-    transform: translate3d(0, 0, 0) scale(1);
+    transform: matrix(1, 0, 0, 1, 0, 0);
     opacity: 1;
   }
   84% {
     animation-timing-function: cubic-bezier(0.5, 0, 0.75, 0);
-    transform: translate3d(0, 0, 0) scale(1);
+    transform: matrix(1, 0, 0, 1, 0, 0);
     opacity: 1;
   }
-  174% {
+  98.4% {
     opacity: 1;
   }
-  179% {
+  99.2% {
     opacity: 0;
   }
   100% {
-    transform: translate3d(200%, 0, 0) scale(0.9);
+    transform: matrix(0.9, 0, 0, 0.9, 150, 0);
     opacity: 0;
   }
 }
-#preview--leftRight.is--tweening {
-  animation: slideInLeft_wait_slideOutRight 3.7s linear 0s forwards;
+.is--tweening #preview--leftRight {
+  animation-name: slideInLeft_wait_slideOutRight;
+  animation-duration: 3.7s;
+  animation-delay: 0s;
+  animation-fill-mode: forwards;
 }
-#preview--topBottom {
-  -webkit-transform: transform3d(0, 0, 0);
-  transform: transform3d(0, 0, 0);
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  overflow-x: hidden;
-}
+
 @keyframes slideInTop_wait_slideOutBottom {
   0% {
     animation-timing-function: cubic-bezier(0.25, 1, 0.5, 1);
-    transform: translate3d(0, -200%, 0) scale(0.9);
+    transform: matrix(0.9, 0, 0, 0.9, 0, -150);
     opacity: 0;
   }
   1.6% {
@@ -213,67 +203,60 @@ body h5 {
     opacity: 1;
   }
   16% {
-    transform: translate3d(0, 0, 0) scale(1);
+    transform: matrix(1, 0, 0, 1, 0, 0);
     opacity: 1;
   }
   84% {
     animation-timing-function: cubic-bezier(0.64, 0, 0.78, 0);
-    transform: translate3d(0, 0, 0) scale(1);
+    transform: matrix(1, 0, 0, 1, 0, 0);
     opacity: 1;
   }
-  174% {
+  98.4% {
     opacity: 1;
   }
-  179% {
+  99.2% {
     opacity: 0;
   }
   100% {
-    transform: translate3d(0, 200%, 0) scale(0.9);
+    transform: matrix(0.9, 0, 0, 0.9, 0, 150);
     opacity: 0;
   }
 }
-#preview--topBottom.is--tweening {
-  animation: slideInTop_wait_slideOutBottom 3.7s linear 0s forwards;
+.is--tweening #preview--topBottom {
+  animation-name: slideInTop_wait_slideOutBottom;
+  animation-duration: 3.7s;
+  animation-delay: 0s;
+  animation-fill-mode: forwards;
 }
 
-#slide--in-left {
-  -webkit-transform: transform3d(0, 0, 0);
-  transform: transform3d(0, 0, 0);
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  overflow-x: hidden;
-}
 @keyframes slideInLeft {
   0% {
     animation-timing-function: cubic-bezier(0.25, 1, 0.5, 1);
-    transform: translate3d(-200%, 0, 0) scale(0.9);
+    transform: matrix(0.9, 0, 0, 0.9, -150, 0);
     opacity: 0;
   }
   10% {
     opacity: 0;
   }
-  50% {
+  30% {
     opacity: 1;
   }
   100% {
-    transform: translate3d(0, 0, 0) scale(1);
+    transform: matrix(1, 0, 0, 1, 0, 0);
     opacity: 1;
   }
 }
-#slide--in-left.is--tweening {
-  animation: slideInLeft 0.6s linear 0s forwards;
+.is--tweening #slide--in-left {
+  animation-name: slideInLeft;
+  animation-duration: 0.6s;
+  animation-delay: 0s;
+  animation-fill-mode: forwards;
 }
-#slide--in-right {
-  -webkit-transform: transform3d(0, 0, 0);
-  transform: transform3d(0, 0, 0);
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  overflow-x: hidden;
-}
+
 @keyframes slideInRight {
   0% {
     animation-timing-function: cubic-bezier(0.25, 1, 0.5, 1);
-    transform: translate3d(200%, 0, 0) scale(0.9);
+    transform: matrix(0.9, 0, 0, 0.9, 150, 0);
     opacity: 0;
   }
   10% {
@@ -283,24 +266,21 @@ body h5 {
     opacity: 1;
   }
   100% {
-    transform: translate3d(0, 0, 0) scale(1);
+    transform: matrix(1, 0, 0, 1, 0, 0);
     opacity: 1;
   }
 }
-#slide--in-right.is--tweening {
-  animation: slideInRight 0.6s linear 0s forwards;
+.is--tweening #slide--in-right {
+  animation-name: slideInRight;
+  animation-duration: 0.6s;
+  animation-delay: 0s;
+  animation-fill-mode: forwards;
 }
-#slide--in-bottom {
-  -webkit-transform: transform3d(0, 0, 0);
-  transform: transform3d(0, 0, 0);
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  overflow-x: hidden;
-}
+
 @keyframes slideInBottom {
   0% {
     animation-timing-function: cubic-bezier(0.25, 1, 0.5, 1);
-    transform: translate3d(0, 200%, 0) scale(0.9);
+    transform: matrix(0.9, 0, 0, 0.9, 0, 150);
     opacity: 0;
   }
   10% {
@@ -310,24 +290,21 @@ body h5 {
     opacity: 1;
   }
   100% {
-    transform: translate3d(0, 0, 0) scale(1);
+    transform: matrix(1, 0, 0, 1, 0, 0);
     opacity: 1;
   }
 }
-#slide--in-bottom.is--tweening {
-  animation: slideInBottom 0.6s linear 0s forwards;
+.is--tweening #slide--in-bottom {
+  animation-name: slideInBottom;
+  animation-duration: 0.6s;
+  animation-delay: 0s;
+  animation-fill-mode: forwards;
 }
-#slide--in-top {
-  -webkit-transform: transform3d(0, 0, 0);
-  transform: transform3d(0, 0, 0);
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  overflow-x: hidden;
-}
+
 @keyframes slideInTop {
   0% {
     animation-timing-function: cubic-bezier(0.25, 1, 0.5, 1);
-    transform: translate3d(0, -200%, 0) scale(0.9);
+    transform: matrix(0.9, 0, 0, 0.9, 0, -150);
     opacity: 0;
   }
   10% {
@@ -337,24 +314,21 @@ body h5 {
     opacity: 1;
   }
   100% {
-    transform: translate3d(0, 0, 0) scale(1);
+    transform: matrix(1, 0, 0, 1, 0, 0);
     opacity: 1;
   }
 }
-#slide--in-top.is--tweening {
-  animation: slideInTop 0.6s linear 0s forwards;
+.is--tweening #slide--in-top {
+  animation-name: slideInTop;
+  animation-duration: 0.6s;
+  animation-delay: 0s;
+  animation-fill-mode: forwards;
 }
-#slide--out-left {
-  -webkit-transform: transform3d(0, 0, 0);
-  transform: transform3d(0, 0, 0);
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  overflow-x: hidden;
-}
+
 @keyframes slideOutLeft {
   0% {
     animation-timing-function: cubic-bezier(0.64, 0, 0.78, 0);
-    transform: translate3d(0, 0, 0) scale(1);
+    transform: matrix(1, 0, 0, 1, 0, 0);
     opacity: 1;
   }
   90% {
@@ -364,24 +338,21 @@ body h5 {
     opacity: 0;
   }
   100% {
-    transform: translate3d(-200%, 0, 0) scale(0.9);
+    transform: matrix(0.9, 0, 0, 0.9, -150, 0);
     opacity: 0;
   }
 }
-#slide--out-left.is--tweening {
-  animation: slideOutLeft 0.6s linear 0s forwards;
+.is--tweening #slide--out-left {
+  animation-name: slideOutLeft;
+  animation-duration: 0.6s;
+  animation-delay: 0s;
+  animation-fill-mode: forwards;
 }
-#slide--out-right {
-  -webkit-transform: transform3d(0, 0, 0);
-  transform: transform3d(0, 0, 0);
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  overflow-x: hidden;
-}
+
 @keyframes slideOutRight {
   0% {
     animation-timing-function: cubic-bezier(0.5, 0, 0.75, 0);
-    transform: translate3d(0, 0, 0) scale(1);
+    transform: matrix(1, 0, 0, 1, 0, 0);
     opacity: 1;
   }
   90% {
@@ -391,24 +362,21 @@ body h5 {
     opacity: 0;
   }
   100% {
-    transform: translate3d(200%, 0, 0) scale(0.9);
+    transform: matrix(0.9, 0, 0, 0.9, 150, 0);
     opacity: 0;
   }
 }
-#slide--out-right.is--tweening {
-  animation: slideOutRight 0.6s linear 0s forwards;
+.is--tweening #slide--out-right {
+  animation-name: slideOutRight;
+  animation-duration: 0.6s;
+  animation-delay: 0s;
+  animation-fill-mode: forwards;
 }
-#slide--out-bottom {
-  -webkit-transform: transform3d(0, 0, 0);
-  transform: transform3d(0, 0, 0);
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  overflow-x: hidden;
-}
+
 @keyframes slideOutBottom {
   0% {
     animation-timing-function: cubic-bezier(0.64, 0, 0.78, 0);
-    transform: translate3d(0, 0, 0) scale(1);
+    transform: matrix(1, 0, 0, 1, 0, 0);
     opacity: 1;
   }
   90% {
@@ -418,24 +386,21 @@ body h5 {
     opacity: 0;
   }
   100% {
-    transform: translate3d(0, 200%, 0) scale(0.9);
+    transform: matrix(0.9, 0, 0, 0.9, 0, 150);
     opacity: 0;
   }
 }
-#slide--out-bottom.is--tweening {
-  animation: slideOutBottom 0.6s linear 0s forwards;
+.is--tweening #slide--out-bottom {
+  animation-name: slideOutBottom;
+  animation-duration: 0.6s;
+  animation-delay: 0s;
+  animation-fill-mode: forwards;
 }
-#slide--out-top {
-  -webkit-transform: transform3d(0, 0, 0);
-  transform: transform3d(0, 0, 0);
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  overflow-x: hidden;
-}
+
 @keyframes slideOutTop {
   0% {
     animation-timing-function: cubic-bezier(0.64, 0, 0.78, 0);
-    transform: translate3d(0, 0, 0) scale(1);
+    transform: matrix(1, 0, 0, 1, 0, 0);
     opacity: 1;
   }
   90% {
@@ -445,12 +410,15 @@ body h5 {
     opacity: 0;
   }
   100% {
-    transform: translate3d(0, -200%, 0) scale(0.9);
+    transform: matrix(0.9, 0, 0, 0.9, 0, -150);
     opacity: 0;
   }
 }
-#slide--out-top.is--tweening {
-  animation: slideOutTop 0.6s linear 0s forwards;
+.is--tweening #slide--out-top {
+  animation-name: slideOutTop;
+  animation-duration: 0.6s;
+  animation-delay: 0s;
+  animation-fill-mode: forwards;
 }
 
 /*# sourceMappingURL=main.css.map */
