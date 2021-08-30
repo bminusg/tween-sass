@@ -9,6 +9,13 @@ tween-sass is a SASS single code-line mixin that delivers the possibility for ch
 3. Define your animation tweening chain on your element
 4. Run animation with adding ".is--tweening" class to your parent or root element
 
+### Custom Configuration
+
+```SASS
+@use "tween-sass" as * with ($parent: "#flyTarget", $activeClass: ".flyContentActive")
+
+```
+
 ### Tween Components
 
 There is an overview of all existing components on http://projects.bminusg.de/tween-sass

@@ -3,9 +3,13 @@
 @use "sass:math"
 @use "defineKeyframes" as *
 
+// DEFINE CUSTOM CONFIG
+$parent: null !default
+$activeClass: ".is--tweening" !default
+
 @mixin tween($tweens...)
 
-    // PART 01: DEFINE GLOBAL CONFIG
+    // DEFINE DEFAULT CONFIG
 
     $props: name, duration, timing-function, iteration-count, direction, fill-mode
     $propDefaults: wait, 1s, linear, 1, normal, forwards
@@ -64,4 +68,4 @@
         @if $i == length($tweens)
             $config: map.set($config, "keyframes", list.append($keyframes, 100%))
 
-    @include defineKeyframes($config)
+    @include defineKeyframes($config, $parent, $activeClass)
