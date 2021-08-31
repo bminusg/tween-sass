@@ -74,15 +74,18 @@
         <article>
           <div class="example--wrapper">
             <h5>Slide In Left - Wait - Slide Out Right</h5>
-            <code>@include tween(slideInLeft, wait 2.5s, slideOutRight)</code>
+            <code>@include tween(slideInLeft, wait 2.5s, slideOutRight) </code>
             <div id="preview--leftRight" class="example"></div>
             <button class="example--btn">Run</button>
           </div>
 
           <div class="example--wrapper">
-            <h5>Slide In Top - Wait - Slide Out Bottom</h5>
-            <code>@include tween(slideInTop, wait 2.5s, slideOutBottom)</code>
-            <div id="preview--topBottom" class="example"></div>
+            <h5>Pulse looped</h5>
+            <code>
+              @include tween(pulse, wait 2s)<br />
+              animation-iteration-count: infinite
+            </code>
+            <div id="preview--pulse" class="example"></div>
             <button class="example--btn">Run</button>
           </div>
         </article>
@@ -93,63 +96,139 @@
         <h2>Slide</h2>
         <article>
           <div class="example--wrapper">
-            <h5>Slide In Left</h5>
-            <div id="slide--in-left" class="example" data-trigger="click"></div>
+            <h5>slideInLeft</h5>
+            <div id="slide--in-left" class="example"></div>
             <button class="example--btn">Run</button>
           </div>
           <div class="example--wrapper">
-            <h5>Slide In Right</h5>
-            <div
-              id="slide--in-right"
-              class="example"
-              data-trigger="click"
-            ></div>
+            <h5>slideInRight</h5>
+            <div id="slide--in-right" class="example"></div>
             <button class="example--btn">Run</button>
           </div>
           <div class="example--wrapper">
-            <h5>Slide In Top</h5>
-            <div id="slide--in-top" class="example" data-trigger="click"></div>
+            <h5>slideInTop</h5>
+            <div id="slide--in-top" class="example"></div>
             <button class="example--btn">Run</button>
           </div>
           <div class="example--wrapper">
-            <h5>Slide In Bottom</h5>
-            <div
-              id="slide--in-bottom"
-              class="example"
-              data-trigger="click"
-            ></div>
+            <h5>slideInBottom</h5>
+            <div id="slide--in-bottom" class="example"></div>
             <button class="example--btn">Run</button>
           </div>
           <div class="example--wrapper">
-            <h5>Slide Out Left</h5>
-            <div
-              id="slide--out-left"
-              class="example"
-              data-trigger="click"
-            ></div>
+            <h5>slideOutLeft</h5>
+            <div id="slide--out-left" class="example"></div>
             <button class="example--btn">Run</button>
           </div>
           <div class="example--wrapper">
-            <h5>Slide Out Right</h5>
-            <div
-              id="slide--out-right"
-              class="example"
-              data-trigger="click"
-            ></div>
+            <h5>slideOutRight</h5>
+            <div id="slide--out-right" class="example"></div>
             <button class="example--btn">Run</button>
           </div>
           <div class="example--wrapper">
-            <h5>Slide Out Top</h5>
-            <div id="slide--out-top" class="example" data-trigger="click"></div>
+            <h5>slideOutTop</h5>
+            <div id="slide--out-top" class="example"></div>
             <button class="example--btn">Run</button>
           </div>
           <div class="example--wrapper">
-            <h5>Slide Out Bottom</h5>
-            <div
-              id="slide--out-bottom"
-              class="example"
-              data-trigger="click"
-            ></div>
+            <h5>slideOutBottom</h5>
+            <div id="slide--out-bottom" class="example"></div>
+            <button class="example--btn">Run</button>
+          </div>
+        </article>
+      </div>
+    </section>
+    <section id="clip">
+      <div class="container">
+        <h2>Zoom</h2>
+        <article>
+          <div class="example--wrapper">
+            <h5>zoomIn</h5>
+            <div id="zoom--in" class="example"></div>
+            <button class="example--btn">Run</button>
+          </div>
+          <div class="example--wrapper">
+            <h5>zoomOut</h5>
+            <div id="zoom--out" class="example"></div>
+            <button class="example--btn">Run</button>
+          </div>
+          <div class="example--wrapper">
+            <h5>zoomInLeft</h5>
+            <div id="zoom--in-left" class="example"></div>
+            <button class="example--btn">Run</button>
+          </div>
+          <div class="example--wrapper">
+            <h5>zoomInRight</h5>
+            <div id="zoom--in-right" class="example"></div>
+            <button class="example--btn">Run</button>
+          </div>
+          <div class="example--wrapper">
+            <h5>zoomInTop</h5>
+            <div id="zoom--in-top" class="example"></div>
+            <button class="example--btn">Run</button>
+          </div>
+          <div class="example--wrapper">
+            <h5>zoomInBottom</h5>
+            <div id="zoom--in-bottom" class="example"></div>
+            <button class="example--btn">Run</button>
+          </div>
+          <div class="example--wrapper">
+            <h5>zoomOutLeft</h5>
+            <div id="zoom--out-left" class="example"></div>
+            <button class="example--btn">Run</button>
+          </div>
+          <div class="example--wrapper">
+            <h5>zoomOutRight</h5>
+            <div id="zoom--out-right" class="example"></div>
+            <button class="example--btn">Run</button>
+          </div>
+          <div class="example--wrapper">
+            <h5>zoomOutTop</h5>
+            <div id="zoom--out-top" class="example"></div>
+            <button class="example--btn">Run</button>
+          </div>
+          <div class="example--wrapper">
+            <h5>zoomOutBottom</h5>
+            <div id="zoom--out-bottom" class="example"></div>
+            <button class="example--btn">Run</button>
+          </div>
+        </article>
+      </div>
+    </section>
+    <section id="clip">
+      <div class="container">
+        <h2>Clip</h2>
+        <article>
+          <div class="example--wrapper">
+            <h5>clipInLeft</h5>
+            <div id="clip--in-left" class="example"></div>
+            <button class="example--btn">Run</button>
+          </div>
+          <div class="example--wrapper">
+            <h5>clipInRight</h5>
+            <div id="clip--in-right" class="example"></div>
+            <button class="example--btn">Run</button>
+          </div>
+          <div class="example--wrapper">
+            <h5>clipInTop</h5>
+            <div id="clip--in-top" class="example"></div>
+            <button class="example--btn">Run</button>
+          </div>
+          <div class="example--wrapper">
+            <h5>clipInBottom</h5>
+            <div id="clip--in-bottom" class="example"></div>
+            <button class="example--btn">Run</button>
+          </div>
+        </article>
+      </div>
+    </section>
+    <section id="pulse">
+      <div class="container">
+        <h2>Pulse</h2>
+        <article>
+          <div class="example--wrapper">
+            <h5>Pulse</h5>
+            <div id="pulse--in" class="example"></div>
             <button class="example--btn">Run</button>
           </div>
         </article>

@@ -1,10 +1,19 @@
+// BUILT-IN MODULES
 @use "sass:list"
 @use "sass:map"
 @use "sass:selector"
-@use "../keyframes/slide" as slide
 
+// KEYFRAMES
+@use "../keyframes/slide" as slide
+@use "../keyframes/clip" as clip
+@use "../keyframes/zoom" as zoom
+@use "../keyframes/pulse"
+
+// LOAD DEFAULTS
+@use "keyframeDefaults" as *
+
+// LIST OF EXCISTING KEYFRAME ANIMATION NAMES
 $keyframes: ()
-$keyframeDefaults: ("slideInLeft": 0.6s cubic-bezier(0.25, 1, 0.5, 1),"slideInRight": 0.6s cubic-bezier(0.25, 1, 0.5, 1),"slideInTop": 0.6s cubic-bezier(0.25, 1, 0.5, 1),"slideInBottom": 0.6s cubic-bezier(0.25, 1, 0.5, 1),"slideOutLeft": 0.6s cubic-bezier(0.64, 0, 0.78, 0),"slideOutRight": 0.6s cubic-bezier(0.5, 0, 0.75, 0),"slideOutTop": 0.6s cubic-bezier(0.64, 0, 0.78, 0),"slideOutBottom": 0.6s cubic-bezier(0.64, 0, 0.78, 0),)
 
 @mixin defineKeyframes($config, $parent, $activeClass)
 
@@ -49,6 +58,42 @@ $keyframeDefaults: ("slideInLeft": 0.6s cubic-bezier(0.25, 1, 0.5, 1),"slideInRi
                     @include slide.OutTop($startFrame, $endFrame, $timingFunction)
                 @if $name == "slideOutBottom"
                     @include slide.OutBottom($startFrame, $endFrame, $timingFunction)
+
+                // PULSE
+                @if $name == "pulse"
+                    @include pulse.pulse($startFrame, $endFrame, $timingFunction)
+
+                // CLIP
+                @if $name == "clipInLeft"
+                    @include clip.inLeft($startFrame, $endFrame, $timingFunction)
+                @if $name == "clipInRight"
+                    @include clip.inRight($startFrame, $endFrame, $timingFunction)
+                @if $name == "clipInTop"
+                    @include clip.inTop($startFrame, $endFrame, $timingFunction)
+                @if $name == "clipInBottom"
+                    @include clip.inBottom($startFrame, $endFrame, $timingFunction)
+
+                // ZOOM
+                @if $name == "zoomIn"
+                    @include zoom.in($startFrame, $endFrame, $timingFunction)
+                @if $name == "zoomInLeft"
+                    @include zoom.inLeft($startFrame, $endFrame, $timingFunction)
+                @if $name == "zoomInTop"
+                    @include zoom.inTop($startFrame, $endFrame, $timingFunction)
+                @if $name == "zoomInRight"
+                    @include zoom.inRight($startFrame, $endFrame, $timingFunction)
+                @if $name == "zoomInBottom"
+                    @include zoom.inBottom($startFrame, $endFrame, $timingFunction)
+                @if $name == "zoomOut"
+                    @include zoom.out($startFrame, $endFrame, $timingFunction)
+                @if $name == "zoomOutLeft"
+                    @include zoom.outLeft($startFrame, $endFrame, $timingFunction)
+                @if $name == "zoomOutTop"
+                    @include zoom.outTop($startFrame, $endFrame, $timingFunction)
+                @if $name == "zoomOutRight"
+                    @include zoom.outRight($startFrame, $endFrame, $timingFunction)
+                @if $name == "zoomOutBottom"
+                    @include zoom.outBottom($startFrame, $endFrame, $timingFunction)
 
     ///R
     // DEFINE ANIMATION PROPS

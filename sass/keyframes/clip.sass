@@ -1,0 +1,74 @@
+@use '../functions/ruleOfThree' as *
+
+// CLIP IN LEFT
+
+@mixin inLeft($start: 0%, $end: 100%, $timingFunction: cubic-bezier(0.83, 0, 0.17, 1))
+
+    $frame_01: ruleOfThree(50%, $start, $end)
+
+    #{$start}
+        animation-timing-function: $timingFunction
+        clip-path: polygon(0 0, 0 0, 0% 100%,0 100%)
+        opacity: 0
+    #{$frame_01}
+        opacity: 1
+    #{$end}
+        clip-path: polygon(0 0, 100% 0, 100% 100%,0 100%)
+
+// CLIP IN RIGHT
+
+@mixin inRight($start: 0%, $end: 50%, $timingFunction: cubic-bezier(0.83, 0, 0.17, 1))
+
+    $frame_01: ruleOfThree(50%, $start, $end)
+
+    #{$start}
+        animation-timing-function: $timingFunction
+        clip-path: polygon(100% 0, 100% 0, 100% 100%,100% 100%)
+        opacity: 0
+    #{$frame_01}
+        opacity: 1
+    #{$end}
+        clip-path: polygon(0 0, 100% 0, 100% 100%,0 100%)
+
+// CLIP IN TOP
+
+@mixin inTop($start: 0%, $end: 100%, $timingFunction: cubic-bezier(0.83, 0, 0.17, 1))
+
+    $frame_01: ruleOfThree(50%, $start, $end)
+
+    #{$start}
+        animation-timing-function: $timingFunction
+        clip-path: polygon(0 0, 100% 0, 100% 0%, 0% 0%)
+        opacity: 0
+    #{$frame_01}
+        opacity: 1
+    #{$end}
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%)
+
+// CLIP IN BOTTOM
+
+@mixin inBottom($start: 0%, $end: 100%, $timingFunction: cubic-bezier(0.83, 0, 0.17, 1))
+
+    $frame_01: ruleOfThree(50%, $start, $end)
+
+    #{$start}
+        animation-timing-function: $timingFunction
+        clip-path: polygon(0 100%, 100% 100%, 0 100%, 0% 0% )
+        opacity: 0
+    #{$frame_01}
+        opacity: 1
+    #{$end}
+        clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100% )
+
+@mixin outBottom($start: 0%, $end: 100%, $timingFunction: cubic-bezier(0.83, 0, 0.17, 1))
+
+    $frame_01: ruleOfThree(50%, $start, $end)
+
+    #{$start}
+        animation-timing-function: $timingFunction
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%)
+        opacity: 0
+    #{$frame_01}
+        opacity: 1
+    #{$end}
+        clip-path: polygon(0 0, 100% 0, 100% 0%, 0% 0%)

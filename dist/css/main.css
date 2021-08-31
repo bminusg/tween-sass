@@ -168,7 +168,7 @@ body h5 {
     opacity: 1;
   }
   84% {
-    animation-timing-function: cubic-bezier(0.5, 0, 0.75, 0);
+    animation-timing-function: cubic-bezier(0.64, 0, 0.78, 0);
     transform: matrix(1, 0, 0, 1, 0, 0);
     opacity: 1;
   }
@@ -190,41 +190,129 @@ body h5 {
   animation-fill-mode: forwards;
 }
 
-@keyframes slideInTop_wait_slideOutBottom {
+#preview--pulse {
+  animation-iteration-count: infinite;
+}
+@keyframes pulse_wait {
   0% {
-    animation-timing-function: cubic-bezier(0.25, 1, 0.5, 1);
-    transform: matrix(0.9, 0, 0, 0.9, 0, -150);
-    opacity: 0;
-  }
-  1.6% {
-    opacity: 0;
-  }
-  8% {
-    opacity: 1;
-  }
-  16% {
+    animation-timing-function: cubic-bezier(0.68, -0.6, 0.32, 1.6);
     transform: matrix(1, 0, 0, 1, 0, 0);
-    opacity: 1;
   }
-  84% {
-    animation-timing-function: cubic-bezier(0.64, 0, 0.78, 0);
+  11.5% {
+    transform: matrix(0.6, 0, 0, 0.6, 0, 0);
+  }
+  17.25% {
+    transform: matrix(1.1, 0, 0, 1.1, 0, 0);
+  }
+  23% {
     transform: matrix(1, 0, 0, 1, 0, 0);
-    opacity: 1;
-  }
-  98.4% {
-    opacity: 1;
-  }
-  99.2% {
-    opacity: 0;
-  }
-  100% {
-    transform: matrix(0.9, 0, 0, 0.9, 0, 150);
-    opacity: 0;
   }
 }
-.is--tweening #preview--topBottom {
-  animation-name: slideInTop_wait_slideOutBottom;
-  animation-duration: 3.7s;
+.is--tweening #preview--pulse {
+  animation-name: pulse_wait;
+  animation-duration: 2.6s;
+  animation-delay: 0s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes pulse {
+  0% {
+    animation-timing-function: cubic-bezier(0.68, -0.6, 0.32, 1.6);
+    transform: matrix(1, 0, 0, 1, 0, 0);
+  }
+  50% {
+    transform: matrix(0.6, 0, 0, 0.6, 0, 0);
+  }
+  75% {
+    transform: matrix(1.1, 0, 0, 1.1, 0, 0);
+  }
+  100% {
+    transform: matrix(1, 0, 0, 1, 0, 0);
+  }
+}
+.is--tweening #pulse--in {
+  animation-name: pulse;
+  animation-duration: 0.6s;
+  animation-delay: 0s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes clipInLeft {
+  0% {
+    animation-timing-function: cubic-bezier(0.83, 0, 0.17, 1);
+    clip-path: polygon(0 0, 0 0, 0% 100%, 0 100%);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+}
+.is--tweening #clip--in-left {
+  animation-name: clipInLeft;
+  animation-duration: 0.6s;
+  animation-delay: 0s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes clipInRight {
+  0% {
+    animation-timing-function: cubic-bezier(0.83, 0, 0.17, 1);
+    clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+}
+.is--tweening #clip--in-right {
+  animation-name: clipInRight;
+  animation-duration: 0.6s;
+  animation-delay: 0s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes clipInTop {
+  0% {
+    animation-timing-function: cubic-bezier(0.83, 0, 0.17, 1);
+    clip-path: polygon(0 0, 100% 0, 100% 0%, 0% 0%);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  }
+}
+.is--tweening #clip--in-top {
+  animation-name: clipInTop;
+  animation-duration: 0.6s;
+  animation-delay: 0s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes clipInBottom {
+  0% {
+    animation-timing-function: cubic-bezier(0.83, 0, 0.17, 1);
+    clip-path: polygon(0 100%, 100% 100%, 0 100%, 0% 0%);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
+  }
+}
+.is--tweening #clip--in-bottom {
+  animation-name: clipInBottom;
+  animation-duration: 0.6s;
   animation-delay: 0s;
   animation-fill-mode: forwards;
 }
@@ -351,7 +439,7 @@ body h5 {
 
 @keyframes slideOutRight {
   0% {
-    animation-timing-function: cubic-bezier(0.5, 0, 0.75, 0);
+    animation-timing-function: cubic-bezier(0.64, 0, 0.78, 0);
     transform: matrix(1, 0, 0, 1, 0, 0);
     opacity: 1;
   }
@@ -417,6 +505,232 @@ body h5 {
 .is--tweening #slide--out-top {
   animation-name: slideOutTop;
   animation-duration: 0.6s;
+  animation-delay: 0s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes zoomIn {
+  0% {
+    animation-timing-function: cubic-bezier(0.25, 1, 0.5, 1);
+    transform: matrix(0.3, 0, 0, 0.3, 0, 0);
+    opacity: 0;
+  }
+  45% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    transform: matrix(1, 0, 0, 1, 0, 0);
+  }
+}
+.is--tweening #zoom--in {
+  animation-name: zoomIn;
+  animation-duration: 1s;
+  animation-delay: 0s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes zoomInLeft {
+  0% {
+    animation-timing-function: cubic-bezier(0.25, 1, 0.5, 1);
+    transform: matrix(0.3, 0, 0, 0.3, 0, 0);
+    transform-origin: left center;
+    opacity: 0;
+  }
+  45% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    transform: matrix(1, 0, 0, 1, 0, 0);
+    transform-origin: center center;
+  }
+}
+.is--tweening #zoom--in-left {
+  animation-name: zoomInLeft;
+  animation-duration: 1s;
+  animation-delay: 0s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes zoomInRight {
+  0% {
+    animation-timing-function: cubic-bezier(0.25, 1, 0.5, 1);
+    transform: matrix(0.3, 0, 0, 0.3, 0, 0);
+    transform-origin: right center;
+    opacity: 0;
+  }
+  45% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    transform: matrix(1, 0, 0, 1, 0, 0);
+    transform-origin: center center;
+  }
+}
+.is--tweening #zoom--in-right {
+  animation-name: zoomInRight;
+  animation-duration: 1s;
+  animation-delay: 0s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes zoomInBottom {
+  0% {
+    animation-timing-function: cubic-bezier(0.25, 1, 0.5, 1);
+    transform: matrix(0.3, 0, 0, 0.3, 0, 0);
+    transform-origin: center bottom;
+    opacity: 0;
+  }
+  45% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    transform: matrix(1, 0, 0, 1, 0, 0);
+    transform-origin: center center;
+  }
+}
+.is--tweening #zoom--in-bottom {
+  animation-name: zoomInBottom;
+  animation-duration: 1s;
+  animation-delay: 0s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes zoomInTop {
+  0% {
+    animation-timing-function: cubic-bezier(0.25, 1, 0.5, 1);
+    transform: matrix(0.3, 0, 0, 0.3, 0, 0);
+    transform-origin: center top;
+    opacity: 0;
+  }
+  45% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    transform: matrix(1, 0, 0, 1, 0, 0);
+    transform-origin: center center;
+  }
+}
+.is--tweening #zoom--in-top {
+  animation-name: zoomInTop;
+  animation-duration: 1s;
+  animation-delay: 0s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes zoomOut {
+  0% {
+    animation-timing-function: cubic-bezier(0.64, 0, 0.78, 0);
+    transform: matrix(1, 0, 0, 1, 0, 0);
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: matrix(0.3, 0, 0, 0.3, 0, 0);
+    opacity: 0;
+  }
+}
+.is--tweening #zoom--out {
+  animation-name: zoomOut;
+  animation-duration: 1s;
+  animation-delay: 0s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes zoomOutLeft {
+  0% {
+    animation-timing-function: cubic-bezier(0.64, 0, 0.78, 0);
+    transform: matrix(1, 0, 0, 1, 0, 0);
+    transform-origin: center center;
+    opacity: 1;
+  }
+  95% {
+    opacity: 1;
+  }
+  100% {
+    transform: matrix(0.3, 0, 0, 0.3, 0, 0);
+    transform-origin: left center;
+    opacity: 0;
+  }
+}
+.is--tweening #zoom--out-left {
+  animation-name: zoomOutLeft;
+  animation-duration: 5s;
+  animation-delay: 0s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes zoomOutRight {
+  0% {
+    animation-timing-function: cubic-bezier(0.64, 0, 0.78, 0);
+    transform: matrix(1, 0, 0, 1, 0, 0);
+    transform-origin: center center;
+    opacity: 1;
+  }
+  95% {
+    opacity: 1;
+  }
+  100% {
+    transform: matrix(0.3, 0, 0, 0.3, 0, 0);
+    transform-origin: right center;
+    opacity: 0;
+  }
+}
+.is--tweening #zoom--out-right {
+  animation-name: zoomOutRight;
+  animation-duration: 1s;
+  animation-delay: 0s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes zoomOutBottom {
+  0% {
+    animation-timing-function: cubic-bezier(0.64, 0, 0.78, 0);
+    transform: matrix(1, 0, 0, 1, 0, 0);
+    transform-origin: center center;
+    opacity: 1;
+  }
+  95% {
+    opacity: 1;
+  }
+  100% {
+    transform: matrix(0.3, 0, 0, 0.3, 0, 0);
+    transform-origin: bottom center;
+    opacity: 0;
+  }
+}
+.is--tweening #zoom--out-bottom {
+  animation-name: zoomOutBottom;
+  animation-duration: 1s;
+  animation-delay: 0s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes zoomOutTop {
+  0% {
+    animation-timing-function: cubic-bezier(0.64, 0, 0.78, 0);
+    transform: matrix(1, 0, 0, 1, 0, 0);
+    transform-origin: center center;
+    opacity: 1;
+  }
+  95% {
+    opacity: 1;
+  }
+  100% {
+    transform: matrix(0.3, 0, 0, 0.3, 0, 0);
+    transform-origin: center top;
+    opacity: 0;
+  }
+}
+.is--tweening #zoom--out-top {
+  animation-name: zoomOutTop;
+  animation-duration: 1s;
   animation-delay: 0s;
   animation-fill-mode: forwards;
 }

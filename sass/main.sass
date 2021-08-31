@@ -86,9 +86,24 @@ body
 #preview
     &--leftRight
         @include tween(slideInLeft, wait 2.5s, slideOutRight)
-    &--topBottom
-        @include tween(slideInTop, wait 2.5s, slideOutBottom)
+    &--pulse
+        @include tween(pulse, wait 2s)
+        animation-iteration-count: infinite
 
+#pulse
+    &--in
+        @include tween(pulse)
+
+#clip
+    &--in
+        &-left
+            @include tween(clipInLeft)
+        &-right
+            @include tween(clipInRight)
+        &-top
+            @include tween(clipInTop)
+        &-bottom
+            @include tween(clipInBottom)
 #slide
     &--in
         &-left
@@ -108,3 +123,25 @@ body
             @include tween(slideOutBottom)
         &-top
             @include tween(slideOutTop)
+
+#zoom
+    &--in
+        @include tween(zoomIn)
+        &-left
+            @include tween(zoomInLeft)
+        &-right
+            @include tween(zoomInRight)
+        &-bottom
+            @include tween(zoomInBottom)
+        &-top
+            @include tween(zoomInTop)
+    &--out
+        @include tween(zoomOut)
+        &-left
+            @include tween(zoomOutLeft 5s)
+        &-right
+            @include tween(zoomOutRight)
+        &-bottom
+            @include tween(zoomOutBottom)
+        &-top
+            @include tween(zoomOutTop)

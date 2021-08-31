@@ -1,17 +1,19 @@
 {
   "name": "tween-sass",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "A shorthand SASS mixin for your animation tweenings",
   "scripts": {
-    "develop": "sass --watch sass/main.sass dist/css/main.css",
-    "test": "sass --watch sass/test.sass dist/css/test.css"
+    "develop": "sass --watch sass/main.sass dist/css/main.css"
   },
   "main": "index.sass",
   "keywords": [
     "sass",
     "animation",
     "tweening",
-    "slide"
+    "slide",
+    "pulse"
+    "clip",
+    "zoom"
   ],
   "author": {
     "name": "Benny Gebauer",

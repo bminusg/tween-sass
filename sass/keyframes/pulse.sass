@@ -1,0 +1,16 @@
+@use '../functions/ruleOfThree' as *
+
+@mixin pulse($start: 0%, $end: 50%, $timingFunction: cubic-bezier(0.68, -0.6, 0.32, 1.6))
+
+    $frame_01: ruleOfThree(50%, $start, $end)
+    $frame_02: ruleOfThree(75%, $start, $end)
+
+    #{$start}
+        animation-timing-function: $timingFunction
+        transform: matrix(1,0,0,1,0,0)
+    #{$frame_01}
+        transform: matrix(0.6, 0, 0, 0.6, 0, 0)
+    #{$frame_02}
+        transform: matrix(1.1, 0, 0, 1.1, 0, 0)
+    #{$end}
+        transform: matrix(1,0,0,1,0,0)
