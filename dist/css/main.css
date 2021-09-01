@@ -237,6 +237,24 @@ body h5 {
   animation-fill-mode: forwards;
 }
 
+@keyframes clipInCircle {
+  0% {
+    animation-timing-function: cubic-bezier(0.68, -0.6, 0.32, 1.6);
+    clip-path: circle(0% at center);
+    opacity: 0;
+  }
+  100% {
+    clip-path: circle(100% at center);
+    opacity: 1;
+  }
+}
+.is--tweening #clip--in-circle {
+  animation-name: clipInCircle;
+  animation-duration: 0.6s;
+  animation-delay: 0s;
+  animation-fill-mode: forwards;
+}
+
 @keyframes clipInLeft {
   0% {
     animation-timing-function: cubic-bezier(0.83, 0, 0.17, 1);
@@ -248,6 +266,7 @@ body h5 {
   }
   100% {
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    opacity: 1;
   }
 }
 .is--tweening #clip--in-left {
@@ -268,6 +287,7 @@ body h5 {
   }
   100% {
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    opacity: 1;
   }
 }
 .is--tweening #clip--in-right {
@@ -288,6 +308,7 @@ body h5 {
   }
   100% {
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    opacity: 1;
   }
 }
 .is--tweening #clip--in-top {
@@ -300,18 +321,124 @@ body h5 {
 @keyframes clipInBottom {
   0% {
     animation-timing-function: cubic-bezier(0.83, 0, 0.17, 1);
-    clip-path: polygon(0 100%, 100% 100%, 0 100%, 0% 0%);
+    clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
     opacity: 0;
   }
   50% {
     opacity: 1;
   }
   100% {
-    clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
+    clip-path: polygon(0 0%, 100% 0%, 100% 100%, 0% 100%);
+    opacity: 1;
   }
 }
 .is--tweening #clip--in-bottom {
   animation-name: clipInBottom;
+  animation-duration: 0.6s;
+  animation-delay: 0s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes clipOutCircle {
+  0% {
+    animation-timing-function: cubic-bezier(0.68, -0.6, 0.32, 1.6);
+    clip-path: circle(100% at center);
+    opacity: 1;
+  }
+  95% {
+    opacity: 1;
+  }
+  100% {
+    clip-path: circle(0% at center);
+    opacity: 0;
+  }
+}
+.is--tweening #clip--out-circle {
+  animation-name: clipOutCircle;
+  animation-duration: 0.6s;
+  animation-delay: 0s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes clipOutLeft {
+  0% {
+    animation-timing-function: cubic-bezier(0.64, 0, 0.78, 0);
+    clip-path: polygon(0 0%, 100% 0%, 100% 100%, 0% 100%);
+    opacity: 1;
+  }
+  95% {
+    opacity: 0;
+  }
+  100% {
+    clip-path: polygon(0 0, 0 0, 0% 100%, 0 100%);
+    opacity: 0;
+  }
+}
+.is--tweening #clip--out-left {
+  animation-name: clipOutLeft;
+  animation-duration: 0.6s;
+  animation-delay: 0s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes clipOutRight {
+  0% {
+    animation-timing-function: cubic-bezier(0.64, 0, 0.78, 0);
+    clip-path: polygon(0 0%, 100% 0%, 100% 100%, 0% 100%);
+    opacity: 1;
+  }
+  95% {
+    opacity: 0;
+  }
+  100% {
+    clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+    opacity: 0;
+  }
+}
+.is--tweening #clip--out-right {
+  animation-name: clipOutRight;
+  animation-duration: 0.6s;
+  animation-delay: 0s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes clipOutTop {
+  0% {
+    animation-timing-function: cubic-bezier(0.64, 0, 0.78, 0);
+    clip-path: polygon(0 0%, 100% 0%, 100% 100%, 0% 100%);
+    opacity: 1;
+  }
+  95% {
+    opacity: 0;
+  }
+  100% {
+    clip-path: polygon(0 0, 100% 0, 100% 0%, 0% 0%);
+    opacity: 0;
+  }
+}
+.is--tweening #clip--out-top {
+  animation-name: clipOutTop;
+  animation-duration: 0.6s;
+  animation-delay: 0s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes clipOutBottom {
+  0% {
+    animation-timing-function: cubic-bezier(0.64, 0, 0.78, 0);
+    clip-path: polygon(0 0%, 100% 0%, 100% 100%, 0% 100%);
+    opacity: 1;
+  }
+  95% {
+    opacity: 0;
+  }
+  100% {
+    clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
+    opacity: 0;
+  }
+}
+.is--tweening #clip--out-bottom {
+  animation-name: clipOutBottom;
   animation-duration: 0.6s;
   animation-delay: 0s;
   animation-fill-mode: forwards;
@@ -505,6 +632,38 @@ body h5 {
 .is--tweening #slide--out-top {
   animation-name: slideOutTop;
   animation-duration: 0.6s;
+  animation-delay: 0s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeIn {
+  0% {
+    animation-timing-function: cubic-bezier(0.64, 0, 0.78, 0);
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.is--tweening #fade--in {
+  animation-name: fadeIn;
+  animation-duration: 1s;
+  animation-delay: 0s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeOut {
+  0% {
+    animation-timing-function: cubic-bezier(0.25, 1, 0.5, 1);
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.is--tweening #fade--out {
+  animation-name: fadeOut;
+  animation-duration: 1s;
   animation-delay: 0s;
   animation-fill-mode: forwards;
 }

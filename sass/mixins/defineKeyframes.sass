@@ -7,6 +7,7 @@
 @use "../keyframes/slide" as slide
 @use "../keyframes/clip" as clip
 @use "../keyframes/zoom" as zoom
+@use "../keyframes/fade" as fade
 @use "../keyframes/pulse"
 
 // LOAD DEFAULTS
@@ -42,6 +43,7 @@ $keyframes: ()
                 $endFrame: list.nth(map.get($config, "keyframes"), $i + 1 )
 
                 // SLIDE
+
                 @if $name == "slideInLeft"
                     @include slide.InLeft($startFrame, $endFrame, $timingFunction)
                 @if $name == "slideInRight"
@@ -60,10 +62,14 @@ $keyframes: ()
                     @include slide.OutBottom($startFrame, $endFrame, $timingFunction)
 
                 // PULSE
+
                 @if $name == "pulse"
                     @include pulse.pulse($startFrame, $endFrame, $timingFunction)
 
                 // CLIP
+
+                @if $name == "clipInCircle"
+                    @include clip.inCircle($startFrame, $endFrame, $timingFunction)
                 @if $name == "clipInLeft"
                     @include clip.inLeft($startFrame, $endFrame, $timingFunction)
                 @if $name == "clipInRight"
@@ -72,8 +78,19 @@ $keyframes: ()
                     @include clip.inTop($startFrame, $endFrame, $timingFunction)
                 @if $name == "clipInBottom"
                     @include clip.inBottom($startFrame, $endFrame, $timingFunction)
+                @if $name == "clipOutCircle"
+                    @include clip.outCircle($startFrame, $endFrame, $timingFunction)
+                @if $name == "clipOutLeft"
+                    @include clip.outLeft($startFrame, $endFrame, $timingFunction)
+                @if $name == "clipOutRight"
+                    @include clip.outRight($startFrame, $endFrame, $timingFunction)
+                @if $name == "clipOutTop"
+                    @include clip.outTop($startFrame, $endFrame, $timingFunction)
+                @if $name == "clipOutBottom"
+                    @include clip.outBottom($startFrame, $endFrame, $timingFunction)
 
                 // ZOOM
+
                 @if $name == "zoomIn"
                     @include zoom.in($startFrame, $endFrame, $timingFunction)
                 @if $name == "zoomInLeft"
@@ -94,6 +111,13 @@ $keyframes: ()
                     @include zoom.outRight($startFrame, $endFrame, $timingFunction)
                 @if $name == "zoomOutBottom"
                     @include zoom.outBottom($startFrame, $endFrame, $timingFunction)
+
+                // FADE
+
+                @if $name == "fadeIn"
+                    @include fade.in($startFrame, $endFrame, $timingFunction)
+                @if $name == "fadeOut"
+                    @include fade.out($startFrame, $endFrame, $timingFunction)
 
     ///R
     // DEFINE ANIMATION PROPS

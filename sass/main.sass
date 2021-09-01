@@ -96,6 +96,8 @@ body
 
 #clip
     &--in
+        &-circle
+            @include tween(clipInCircle)
         &-left
             @include tween(clipInLeft)
         &-right
@@ -104,6 +106,17 @@ body
             @include tween(clipInTop)
         &-bottom
             @include tween(clipInBottom)
+    &--out
+        &-circle
+            @include tween(clipOutCircle)
+        &-left
+            @include tween(clipOutLeft)
+        &-right
+            @include tween(clipOutRight)
+        &-top
+            @include tween(clipOutTop)
+        &-bottom
+            @include tween(clipOutBottom)
 #slide
     &--in
         &-left
@@ -123,6 +136,12 @@ body
             @include tween(slideOutBottom)
         &-top
             @include tween(slideOutTop)
+
+#fade
+    &--in
+        @include tween(fadeIn)
+    &--out
+        @include tween(fadeOut)
 
 #zoom
     &--in

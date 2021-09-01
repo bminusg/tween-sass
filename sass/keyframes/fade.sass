@@ -1,0 +1,21 @@
+@use '../functions/ruleOfThree' as *
+
+// FADE IN
+
+@mixin in($start: 0%, $end: 100%, $timingFunction: cubic-bezier(0.68, -0.6, 0.32, 1.6))
+
+    #{$start}
+        animation-timing-function: $timingFunction
+        opacity: 0
+    #{$end}
+        opacity: 1
+
+// FADE OUT
+
+@mixin out($start: 0%, $end: 100%, $timingFunction: cubic-bezier(0.68, -0.6, 0.32, 1.6))
+
+    #{$start}
+        animation-timing-function: $timingFunction
+        opacity: 1
+    #{$end}
+        opacity: 0

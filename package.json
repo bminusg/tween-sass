@@ -1,6 +1,6 @@
 {
   "name": "tween-sass",
-  "version": "0.3.2",
+  "version": "0.4.0",
   "description": "A shorthand SASS mixin for your animation tweenings",
   "scripts": {
     "develop": "sass --watch sass/main.sass dist/css/main.css"
@@ -13,7 +13,8 @@
     "slide",
     "pulse",
     "clip",
-    "zoom"
+    "zoom",
+    "fade"
   ],
   "author": {
     "name": "Benny Gebauer",
