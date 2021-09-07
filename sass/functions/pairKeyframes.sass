@@ -1,0 +1,47 @@
+// BUILT IN MODULES
+
+@use "sass:list"
+@use "sass:map"
+
+@function pairKeyframes($frame, $frameList, $keyframes)
+
+    // WAIT FRAMES
+
+    $waitStart: list.nth($frame, 1)
+    $waitEnd: list.nth($frame, 2)
+
+    // FIRST AND LAST KEYFRAMES
+
+    $lastFrame: list.nth($frameList, length($frameList))
+    $firstFrame: list.nth($frameList, 1)
+
+    // MATCHING KEYFRAME INDEX
+
+    $idx: null
+
+    // SEARCHING MATCHING INDEX
+
+    @if $waitStart == $lastFrame
+        $idx: length($frameList)
+
+    @if $waitEnd == $firstFrame
+        $idx: 1
+
+    // PAIR KEYFRAMES
+
+    @if $idx
+
+        $global__frameList: list.nth($keyframes, 1)
+        $mergeFrames: null
+
+        @if $idx == 1
+            $mergeFrames: list.join($waitStart, list.nth($global__frameList, $idx), $separator: comma )
+        @else
+            $mergeFrames: list.join(list.nth($global__frameList, $idx), $waitEnd, $separator: comma )
+
+        $mergeList: list.set-nth($global__frameList, $idx, $mergeFrames)
+        $keyframes: list.set-nth($keyframes, 1, $mergeList)
+
+    // RETURN KEYFRAME MAP
+
+    @return $keyframes

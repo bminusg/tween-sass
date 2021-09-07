@@ -1,14 +1,28 @@
+// BUILT IN MODULES
+
 @use "sass:list"
 @use "sass:map"
 @use "sass:math"
-@use "defineKeyframes" as *
-
-// LOAD DEFAULTS
-@use "keyframeDefaults" as *
+@use "sass:selector"
 
 // DEFINE CUSTOM CONFIG
+
 $parent: null !default
 $activeClass: ".is--tweening" !default
+
+// DEFINE KEYFRAMES FUNCTION
+
+@use "../functions/defineKeyframes" as *
+
+// KEYFRAME DEFAULTS
+
+@use "../keyframes/__defaults" as *
+
+// LIST OF DEFINED KEYFRAME ANIMATION AND PROPERTIES
+
+$keyframes: ()
+
+// TWEEN MIXIN
 
 @mixin tween($tweens...)
 
@@ -17,7 +31,9 @@ $activeClass: ".is--tweening" !default
     $props: name, duration, timing-function, iteration-count, direction, fill-mode
     $propDefaults: wait, 1s, linear, 1, normal, forwards
     $propLength: length($props) + 1
-    $config: ("name": null,"duration": null,"timing-function": null,"iteration-count": null,"direction": null,"fill-mode": null, "totalDuration": 0, "keyframes": 0%)
+    $config: ("name": null,"duration": null,"timing-function": null,"iteration-count": null,"direction": null,"fill-mode": null, "totalDuration": 0, "keyframes": (0%))
+
+    // LOOP THROUGH EVERY TWEEN COMPONENT
 
     @each $tween in $tweens
 
@@ -51,15 +67,19 @@ $activeClass: ".is--tweening" !default
 
             $config: map.set($config, $prop, $value)
 
-    // CALC START AND END KEYFRAMES AND
-    @for $i from 1 to length($tweens) + 1
+    // CALC START AND END KEYFRAMES
+
+    @for $i from 1 through length($tweens)
+
         $totalDuration: map.get($config, "totalDuration")
         $keyframes: map.get($config, "keyframes")
         $duration: list.nth(map.get($config, "duration"), $i)
+
         $amount: math.percentage(math.div($duration, $totalDuration))
         $amount: math.round($amount)
 
         // SETTING FIRST KEYFRAME
+
         @if $i == 1
             $config: map.set($config, "keyframes", list.append($keyframes, $amount))
 
@@ -68,7 +88,69 @@ $activeClass: ".is--tweening" !default
             $config: map.set($config, "keyframes", list.append($keyframes, $amount + $previousFrame))
 
         // SETTING LAST FRAME
+
         @if $i == length($tweens)
+
             $config: map.set($config, "keyframes", list.append($keyframes, 100%))
 
-    @include defineKeyframes($config, $parent, $activeClass)
+    // BUILD ANIMATION NAME
+
+    $animationName: null
+    $names: map.get($config, "name")
+
+    @for $i from 1 to length($names) + 1
+        @if $animationName == null
+            $animationName: list.nth($names, $i)
+        @else
+            $animationName: $animationName + "_" + list.nth($names, $i)
+
+    // PREVENT KEYFRAME DUPLICATES
+
+    @if not map.has-key($keyframes, $animationName)
+
+        // DEFINE KEYFRAMES
+
+        $keyframes: map.set($keyframes, $animationName, defineKeyframes($animationName, $config)) !global
+
+        // SET ANIMATION
+
+        $keyframes: map.get($keyframes, $animationName)
+        $frames: list.nth($keyframes, 1)
+
+        // WRITE KEYFRAMES
+
+        @keyframes #{$animationName}
+            @for $i from 1 through length($frames)
+
+                $frame: list.nth($frames, $i)
+                $values: list.nth($keyframes, $i + 1)
+
+                #{$frame}
+                    @each $key, $value in $values
+                        #{$key}: $value
+
+        // DEFINE ANIMATION PROPS
+
+        $selectors: selector.parse(#{&})
+
+        @each $selector in $selectors
+
+            // ADDING PARENT
+
+            @if $parent
+                $activeClass: selector.unify($parent, $activeClass)
+
+            // IN CASE OF OVERWRITING 
+            // YOU CAN USE A SECOND ACTIVE CLASS OR DATA ATTRIBUTE
+
+            @if length($selector) > 1
+                $superSelector: selector.unify($activeClass, list.nth($selector, 1))
+                $selector: selector.replace($selector, list.nth($selector, 1) , $superSelector)
+            @else
+                $selector: selector.nest($activeClass, $selector)
+
+            @at-root #{$selector}
+                animation-name: $animationName
+                animation-duration: map.get($config, totalDuration)
+                animation-delay: 0s
+                animation-fill-mode: forwards

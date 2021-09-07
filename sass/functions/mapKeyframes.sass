@@ -1,0 +1,44 @@
+// BUILT IN
+
+@use "sass:map"
+@use "sass:list"
+
+// TWEENING COMPONENTS
+
+@use "../keyframes/slide" as *
+@use "../keyframes/clip" as *
+@use "../keyframes/zoom" as *
+@use "../keyframes/fade" as *
+@use "../keyframes/pulse" as *
+
+// HELPER FUNCTION
+
+@use "listRemove" as *
+
+// MAP FUNCTION
+
+@function mapKeyframes($name, $startFrame, $endFrame, $timingFunction, $keyframes)
+
+    //$animation: map.get($keyframes, $animationName)
+
+    @if function-exists($name)
+
+        $frames: call(get-function($name), $startFrame, $endFrame, $timingFunction)
+
+        // MERGE KEYFRAME CONFIG
+
+        @if length($keyframes) == 0
+            //$keyframes: map.set($keyframes, $animationName, $frames)
+            $keyframes: list.join($keyframes, $frames)
+        @else
+
+            $mergedKeys: list.join(list.nth($keyframes, 1), list.nth($frames, 1))
+
+            // FRAME MODELING
+
+            $animation: list.set-nth($keyframes, 1, $mergedKeys)
+            $keyframes: list.join($animation, listRemove($frames, 1))
+    @else
+        @error "Tween component #{$name} does not excist"
+
+    @return $keyframes

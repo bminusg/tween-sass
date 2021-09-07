@@ -204,13 +204,149 @@ body h5 {
   17.25% {
     transform: matrix(1.1, 0, 0, 1.1, 0, 0);
   }
-  23% {
+  23%, 100% {
     transform: matrix(1, 0, 0, 1, 0, 0);
   }
 }
 .is--tweening #preview--pulse {
   animation-name: pulse_wait;
   animation-duration: 2.6s;
+  animation-delay: 0s;
+  animation-fill-mode: forwards;
+}
+
+#preview--group {
+  position: relative;
+  height: 50px;
+}
+#preview--group-01 {
+  position: absolute;
+  border-radius: 0 0 0 0;
+  animation-iteration-count: infinite;
+}
+@keyframes slideInLeft_wait_slideOutRight_wait {
+  0% {
+    animation-timing-function: cubic-bezier(0.25, 1, 0.5, 1);
+    transform: matrix(0.9, 0, 0, 0.9, -150, 0);
+    opacity: 0;
+  }
+  0.6% {
+    opacity: 0;
+  }
+  1.8% {
+    opacity: 1;
+  }
+  6% {
+    transform: matrix(1, 0, 0, 1, 0, 0);
+    opacity: 1;
+  }
+  27% {
+    animation-timing-function: cubic-bezier(0.64, 0, 0.78, 0);
+    transform: matrix(1, 0, 0, 1, 0, 0);
+    opacity: 1;
+  }
+  32.4% {
+    opacity: 1;
+  }
+  32.7% {
+    opacity: 0;
+  }
+  33%, 100% {
+    transform: matrix(0.9, 0, 0, 0.9, 150, 0);
+    opacity: 0;
+  }
+}
+.is--tweening #preview--group-01 {
+  animation-name: slideInLeft_wait_slideOutRight_wait;
+  animation-duration: 9.6s;
+  animation-delay: 0s;
+  animation-fill-mode: forwards;
+}
+
+#preview--group-02 {
+  position: absolute;
+  border-radius: 0 0 0 0;
+  clip-path: polygon(25px 0, 25px 0, 0 50px, 50px 50px);
+  animation-iteration-count: infinite;
+}
+@keyframes wait_slideInLeft_wait_slideOutRight_wait {
+  0%, 33% {
+    animation-timing-function: cubic-bezier(0.25, 1, 0.5, 1);
+    transform: matrix(0.9, 0, 0, 0.9, -150, 0);
+    opacity: 0;
+  }
+  33.6% {
+    opacity: 0;
+  }
+  34.8% {
+    opacity: 1;
+  }
+  39% {
+    transform: matrix(1, 0, 0, 1, 0, 0);
+    opacity: 1;
+  }
+  60% {
+    animation-timing-function: cubic-bezier(0.64, 0, 0.78, 0);
+    transform: matrix(1, 0, 0, 1, 0, 0);
+    opacity: 1;
+  }
+  65.4% {
+    opacity: 1;
+  }
+  65.7% {
+    opacity: 0;
+  }
+  66%, 100% {
+    transform: matrix(0.9, 0, 0, 0.9, 150, 0);
+    opacity: 0;
+  }
+}
+.is--tweening #preview--group-02 {
+  animation-name: wait_slideInLeft_wait_slideOutRight_wait;
+  animation-duration: 9.6s;
+  animation-delay: 0s;
+  animation-fill-mode: forwards;
+}
+
+#preview--group-03 {
+  position: absolute;
+  animation-iteration-count: infinite;
+}
+@keyframes wait_slideInLeft_wait_slideOutRight {
+  0%, 67% {
+    animation-timing-function: cubic-bezier(0.25, 1, 0.5, 1);
+    transform: matrix(0.9, 0, 0, 0.9, -150, 0);
+    opacity: 0;
+  }
+  67.6% {
+    opacity: 0;
+  }
+  68.8% {
+    opacity: 1;
+  }
+  73% {
+    transform: matrix(1, 0, 0, 1, 0, 0);
+    opacity: 1;
+  }
+  94% {
+    animation-timing-function: cubic-bezier(0.64, 0, 0.78, 0);
+    transform: matrix(1, 0, 0, 1, 0, 0);
+    opacity: 1;
+  }
+  99.4% {
+    opacity: 1;
+  }
+  99.7% {
+    opacity: 0;
+  }
+  100% {
+    transform: matrix(0.9, 0, 0, 0.9, 150, 0);
+    opacity: 0;
+  }
+}
+.is--tweening #preview--group-03 {
+  animation-name: wait_slideInLeft_wait_slideOutRight;
+  animation-duration: 9.6s;
   animation-delay: 0s;
   animation-fill-mode: forwards;
 }
@@ -477,7 +613,7 @@ body h5 {
   10% {
     opacity: 0;
   }
-  50% {
+  30% {
     opacity: 1;
   }
   100% {
@@ -501,7 +637,7 @@ body h5 {
   10% {
     opacity: 0;
   }
-  50% {
+  30% {
     opacity: 1;
   }
   100% {
@@ -525,7 +661,7 @@ body h5 {
   10% {
     opacity: 0;
   }
-  50% {
+  30% {
     opacity: 1;
   }
   100% {
@@ -678,8 +814,8 @@ body h5 {
     opacity: 1;
   }
   100% {
-    opacity: 1;
     transform: matrix(1, 0, 0, 1, 0, 0);
+    opacity: 1;
   }
 }
 .is--tweening #zoom--in {
@@ -700,9 +836,9 @@ body h5 {
     opacity: 1;
   }
   100% {
-    opacity: 1;
     transform: matrix(1, 0, 0, 1, 0, 0);
     transform-origin: center center;
+    opacity: 1;
   }
 }
 .is--tweening #zoom--in-left {
@@ -723,9 +859,9 @@ body h5 {
     opacity: 1;
   }
   100% {
-    opacity: 1;
     transform: matrix(1, 0, 0, 1, 0, 0);
     transform-origin: center center;
+    opacity: 1;
   }
 }
 .is--tweening #zoom--in-right {
@@ -746,9 +882,9 @@ body h5 {
     opacity: 1;
   }
   100% {
-    opacity: 1;
     transform: matrix(1, 0, 0, 1, 0, 0);
     transform-origin: center center;
+    opacity: 1;
   }
 }
 .is--tweening #zoom--in-bottom {
@@ -769,9 +905,9 @@ body h5 {
     opacity: 1;
   }
   100% {
-    opacity: 1;
     transform: matrix(1, 0, 0, 1, 0, 0);
     transform-origin: center center;
+    opacity: 1;
   }
 }
 .is--tweening #zoom--in-top {
@@ -820,7 +956,7 @@ body h5 {
 }
 .is--tweening #zoom--out-left {
   animation-name: zoomOutLeft;
-  animation-duration: 5s;
+  animation-duration: 1s;
   animation-delay: 0s;
   animation-fill-mode: forwards;
 }

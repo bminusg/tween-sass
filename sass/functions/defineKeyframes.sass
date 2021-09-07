@@ -1,0 +1,44 @@
+// BUILT-IN MODULES
+
+@use "sass:list"
+@use "sass:map"
+
+// MAP KEYFRAME FUNCTION
+
+@use "../functions/mapKeyframes" as *
+
+// PAIR KEYFRAME FUNCTION
+
+@use "../functions/pairKeyframes" as *
+
+// DEFINE KEYFRAMES FUCNTION
+
+@function defineKeyframes($animationName, $config)
+
+    $names: map.get($config, "name")
+    $duration: map.get($config, "totalDuration")
+    $waitFrames: ()
+    $keyframes: ()
+
+    // MAPPING KEYFRAMES
+
+    @for $i from 1 through length($names)
+        $name: list.nth($names, $i )
+        $timingFunction: list.nth(map.get($config, "timing-function"), $i )
+        $startFrame: list.nth(map.get($config, "keyframes"), $i )
+        $endFrame: list.nth(map.get($config, "keyframes"), $i + 1 )
+
+        @if $name == wait
+            $waitFrames: list.append($waitFrames, ($startFrame, $endFrame), $separator: comma)
+        @else
+            $keyframes: mapKeyframes($name, $startFrame, $endFrame, $timingFunction, $keyframes)
+
+    // WAIT MODELING
+
+    $keys: list.nth($keyframes, 1)
+
+    @each $waitFrame in $waitFrames
+
+        $keyframes: pairKeyframes($waitFrame, $keys, $keyframes)
+
+    @return $keyframes

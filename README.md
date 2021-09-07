@@ -27,3 +27,7 @@ There is an overview of all existing components on http://projects.bminusg.de/tw
     @include tween(slideInLeft, wait 2.5s, slideOutRight)
     animation-iteration-count: infinite
 ```
+
+### Ideation
+
+- Use tween-group(tween, index, length) mixin for a dynamic offset calculating depending of multiple tweens

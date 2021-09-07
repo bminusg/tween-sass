@@ -2,20 +2,16 @@
 
 // FADE IN
 
-@mixin in($start: 0%, $end: 100%, $timingFunction: cubic-bezier(0.68, -0.6, 0.32, 1.6))
+@function fadeIn($start: 0%, $end: 100%, $timingFunction: cubic-bezier(0.68, -0.6, 0.32, 1.6))
 
-    #{$start}
-        animation-timing-function: $timingFunction
-        opacity: 0
-    #{$end}
-        opacity: 1
+    $frames: (($start, $end), (animation-timing-function: $timingFunction, opacity: 0), (opacity: 1))
+
+    @return $frames
 
 // FADE OUT
 
-@mixin out($start: 0%, $end: 100%, $timingFunction: cubic-bezier(0.68, -0.6, 0.32, 1.6))
+@function fadeOut($start: 0%, $end: 100%, $timingFunction: cubic-bezier(0.68, -0.6, 0.32, 1.6))
 
-    #{$start}
-        animation-timing-function: $timingFunction
-        opacity: 1
-    #{$end}
-        opacity: 0
+    $frames: (($start, $end), (animation-timing-function: $timingFunction, opacity: 1), (opacity: 0))
+
+    @return $frames

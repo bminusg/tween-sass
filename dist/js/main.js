@@ -26,7 +26,7 @@ class Preview {
       btn.addEventListener(triggerEvent, (event) => {
         event.preventDefault();
 
-        this.tween.animate(this.examples[idx]);
+        this.tween.animate(btn);
       });
     });
   }

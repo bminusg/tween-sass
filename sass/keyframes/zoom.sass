@@ -2,176 +2,90 @@
 
 // ZOOM IN
 
-@mixin in($start: 0%, $end: 100%, $timingFunction: cubic-bezier(0.25, 1, 0.5, 1))
+@function zoomIn($start: 0%, $end: 100%, $timingFunction: cubic-bezier(0.25, 1, 0.5, 1))
 
     $frame_01: ruleOfThree(45%, $start, $end)
+    $frames: (($start, $frame_01, $end), (animation-timing-function: $timingFunction, transform: matrix(0.3, 0, 0, 0.3, 0, 0), opacity: 0), (opacity: 1), (transform: matrix(1,0,0,1,0,0), opacity: 1))
 
-    #{$start}
-        animation-timing-function: $timingFunction
-        transform: matrix(0.3, 0, 0, 0.3, 0, 0)
-        opacity: 0
-    #{$frame_01}
-        opacity: 1
-    #{$end}
-        opacity: 1
-        transform: matrix(1,0,0,1,0,0)
+    @return $frames
 
 // ZOOM IN LEFT
 
-@mixin inLeft($start: 0%, $end: 100%, $timingFunction: cubic-bezier(0.25, 1, 0.5, 1))
+@function zoomInLeft($start: 0%, $end: 100%, $timingFunction: cubic-bezier(0.25, 1, 0.5, 1))
 
     $frame_01: ruleOfThree(45%, $start, $end)
+    $frames: (($start, $frame_01, $end), (animation-timing-function: $timingFunction, transform: matrix(0.3, 0, 0, 0.3, 0, 0), transform-origin: left center, opacity: 0), (opacity: 1), (transform: matrix(1,0,0,1,0,0), transform-origin: center center, opacity: 1))
 
-    #{$start}
-        animation-timing-function: $timingFunction
-        transform: matrix(0.3, 0, 0, 0.3, 0, 0)
-        transform-origin: left center
-        opacity: 0
-    #{$frame_01}
-        opacity: 1
-    #{$end}
-        opacity: 1
-        transform: matrix(1,0,0,1,0,0)
-        transform-origin: center center
+    @return $frames
 
 // ZOOM IN TOP
 
-@mixin inTop($start: 0%, $end: 50%, $timingFunction: cubic-bezier(0.25, 1, 0.5, 1))
+@function zoomInTop($start: 0%, $end: 50%, $timingFunction: cubic-bezier(0.25, 1, 0.5, 1))
 
     $frame_01: ruleOfThree(45%, $start, $end)
+    $frames: (($start, $frame_01, $end), (animation-timing-function: $timingFunction, transform: matrix(0.3, 0, 0, 0.3, 0, 0), transform-origin: center top, opacity: 0), (opacity: 1), (transform: matrix(1,0,0,1,0,0), transform-origin: center center, opacity: 1))
 
-    #{$start}
-        animation-timing-function: $timingFunction
-        transform: matrix(0.3, 0, 0, 0.3, 0, 0)
-        transform-origin: center top
-        opacity: 0
-    #{$frame_01}
-        opacity: 1
-    #{$end}
-        opacity: 1
-        transform: matrix(1,0,0,1,0,0)
-        transform-origin: center center
+    @return $frames
 
 // ZOOM IN RIGHT
 
-@mixin inRight($start: 0%, $end: 50%, $timingFunction: cubic-bezier(0.25, 1, 0.5, 1))
+@function zoomInRight($start: 0%, $end: 50%, $timingFunction: cubic-bezier(0.25, 1, 0.5, 1))
 
     $frame_01: ruleOfThree(45%, $start, $end)
+    $frames: (($start, $frame_01, $end), (animation-timing-function: $timingFunction, transform: matrix(0.3, 0, 0, 0.3, 0, 0), transform-origin: right center, opacity: 0), (opacity: 1), (transform: matrix(1,0,0,1,0,0), transform-origin: center center, opacity: 1))
 
-    #{$start}
-        animation-timing-function: $timingFunction
-        transform: matrix(0.3, 0, 0, 0.3, 0, 0)
-        transform-origin: right center
-        opacity: 0
-    #{$frame_01}
-        opacity: 1
-    #{$end}
-        opacity: 1
-        transform: matrix(1,0,0,1,0,0)
-        transform-origin: center center
+    @return $frames
 
 // ZOOM IN BOTTOM
 
-@mixin inBottom($start: 0%, $end: 50%, $timingFunction: cubic-bezier(0.25, 1, 0.5, 1))
+@function zoomInBottom($start: 0%, $end: 50%, $timingFunction: cubic-bezier(0.25, 1, 0.5, 1))
 
     $frame_01: ruleOfThree(45%, $start, $end)
+    $frames: (($start, $frame_01, $end), (animation-timing-function: $timingFunction, transform: matrix(0.3, 0, 0, 0.3, 0, 0), transform-origin: center bottom, opacity: 0), (opacity: 1), (transform: matrix(1,0,0,1,0,0), transform-origin: center center, opacity: 1))
 
-    #{$start}
-        animation-timing-function: $timingFunction
-        transform: matrix(0.3, 0, 0, 0.3, 0, 0)
-        transform-origin: center bottom
-        opacity: 0
-    #{$frame_01}
-        opacity: 1
-    #{$end}
-        opacity: 1
-        transform: matrix(1,0,0,1,0,0)
-        transform-origin: center center
+    @return $frames
 
 // ZOOM OUT
 
-@mixin out($start: 0%, $end: 100%, $timingFunction: cubic-bezier(0.25, 1, 0.5, 1))
+@function zoomOut($start: 0%, $end: 100%, $timingFunction: cubic-bezier(0.25, 1, 0.5, 1))
 
     $frame_01: ruleOfThree(90%, $start, $end)
+    $frames: (($start, $frame_01, $end), (animation-timing-function: $timingFunction, transform: matrix(1,0,0,1,0,0), opacity: 1), (opacity: 1), (transform: matrix(0.3, 0, 0, 0.3, 0, 0), opacity: 0))
 
-    #{$start}
-        animation-timing-function: $timingFunction
-        transform: matrix(1,0,0,1,0,0)
-        opacity: 1
-    #{$frame_01}
-        opacity: 1
-    #{$end}
-        transform: matrix(0.3, 0, 0, 0.3, 0, 0)
-        opacity: 0
+    @return $frames
 
 // ZOOM OUT LEFT
 
-@mixin outLeft($start: 0%, $end: 100%, $timingFunction: cubic-bezier(0.5, 0, 0.75, 0))
+@function zoomOutLeft($start: 0%, $end: 100%, $timingFunction: cubic-bezier(0.5, 0, 0.75, 0))
 
     $frame_01: ruleOfThree(95%, $start, $end)
+    $frames: (($start, $frame_01, $end), (animation-timing-function: $timingFunction, transform: matrix(1,0,0,1,0,0), transform-origin: center center, opacity: 1), (opacity: 1), (transform: matrix(0.3, 0, 0, 0.3, 0, 0), transform-origin: left center, opacity: 0))
 
-    #{$start}
-        animation-timing-function: $timingFunction
-        transform: matrix(1,0,0,1,0,0)
-        transform-origin: center center
-        opacity: 1
-    #{$frame_01}
-        opacity: 1
-    #{$end}
-        transform: matrix(0.3, 0, 0, 0.3, 0, 0)
-        transform-origin: left center
-        opacity: 0
+    @return $frames
 
 // ZOOM OUT TOP
 
-@mixin outTop($start: 0%, $end: 100%, $timingFunction: cubic-bezier(0.5, 0, 0.75, 0))
+@function zoomOutTop($start: 0%, $end: 100%, $timingFunction: cubic-bezier(0.5, 0, 0.75, 0))
 
     $frame_01: ruleOfThree(95%, $start, $end)
+    $frames: (($start, $frame_01, $end), (animation-timing-function: $timingFunction, transform: matrix(1,0,0,1,0,0), transform-origin: center center, opacity: 1), (opacity: 1), (transform: matrix(0.3, 0, 0, 0.3, 0, 0), transform-origin: center top, opacity: 0))
 
-    #{$start}
-        animation-timing-function: $timingFunction
-        transform: matrix(1,0,0,1,0,0)
-        transform-origin: center center
-        opacity: 1
-    #{$frame_01}
-        opacity: 1
-    #{$end}
-        transform: matrix(0.3, 0, 0, 0.3, 0, 0)
-        transform-origin: center top
-        opacity: 0
+    @return $frames
 
 // ZOOM OUT RIGHT
 
-@mixin outRight($start: 0%, $end: 100%, $timingFunction: cubic-bezier(0.5, 0, 0.75, 0))
+@function zoomOutRight($start: 0%, $end: 100%, $timingFunction: cubic-bezier(0.5, 0, 0.75, 0))
 
     $frame_01: ruleOfThree(95%, $start, $end)
+    $frames: (($start, $frame_01, $end), (animation-timing-function: $timingFunction, transform: matrix(1,0,0,1,0,0), transform-origin: center center, opacity: 1), (opacity: 1), (transform: matrix(0.3, 0, 0, 0.3, 0, 0), transform-origin: right center, opacity: 0))
 
-    #{$start}
-        animation-timing-function: $timingFunction
-        transform: matrix(1,0,0,1,0,0)
-        transform-origin: center center
-        opacity: 1
-    #{$frame_01}
-        opacity: 1
-    #{$end}
-        transform: matrix(0.3, 0, 0, 0.3, 0, 0)
-        transform-origin: right center
-        opacity: 0
+    @return $frames
 
 // ZOOM OUT BOTTOM
 
-@mixin outBottom($start: 0%, $end: 50%, $timingFunction: cubic-bezier(0.5, 0, 0.75, 0))
+@function zoomOutBottom($start: 0%, $end: 50%, $timingFunction: cubic-bezier(0.5, 0, 0.75, 0))
 
     $frame_01: ruleOfThree(95%, $start, $end)
+    $frames: (($start, $frame_01, $end), (animation-timing-function: $timingFunction, transform: matrix(1,0,0,1,0,0), transform-origin: center center, opacity: 1), (opacity: 1), (transform: matrix(0.3, 0, 0, 0.3, 0, 0), transform-origin: bottom center, opacity: 0))
 
-    #{$start}
-        animation-timing-function: $timingFunction
-        transform: matrix(1,0,0,1,0,0)
-        transform-origin: center center
-        opacity: 1
-    #{$frame_01}
-        opacity: 1
-    #{$end}
-        transform: matrix(0.3, 0, 0, 0.3, 0, 0)
-        transform-origin: bottom center
-        opacity: 0
+    @return $frames

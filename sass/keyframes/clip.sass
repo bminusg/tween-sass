@@ -2,156 +2,89 @@
 
 // CLIP IN CIRCLE
 
-@mixin inCircle($start: 0%, $end: 100%, $timingFunction: cubic-bezier(0.83, 0, 0.17, 1))
+@function clipInCircle($start: 0%, $end: 100%, $timingFunction: cubic-bezier(0.83, 0, 0.17, 1))
 
-    #{$start}
-        animation-timing-function: $timingFunction
-        clip-path: circle(0% at center)
-        opacity: 0
-    #{$end}
-        clip-path: circle(100% at center)
-        opacity: 1
+    $frames: (($start, $end), (animation-timing-function: $timingFunction, clip-path: circle(0% at center), opacity: 0), (clip-path: circle(100% at center), opacity: 1))
+
+    @return $frames
 
 // CLIP OUT CIRCLE
 
-@mixin outCircle($start: 0%, $end: 100%, $timingFunction: cubic-bezier(0.83, 0, 0.17, 1))
+@function clipOutCircle($start: 0%, $end: 100%, $timingFunction: cubic-bezier(0.83, 0, 0.17, 1))
 
     $frame_01: ruleOfThree(95%, $start, $end)
+    $frames: (($start, $frame_01, $end), (animation-timing-function: $timingFunction, clip-path: circle(100% at center), opacity: 1), (opacity: 1), (clip-path: circle(0% at center), opacity: 0))
 
-    #{$start}
-        animation-timing-function: $timingFunction
-        clip-path: circle(100% at center)
-        opacity: 1
-    #{$frame_01}
-        opacity: 1
-    #{$end}
-        clip-path: circle(0% at center)
-        opacity: 0
+    @return $frames
 
 // CLIP IN LEFT
 
-@mixin inLeft($start: 0%, $end: 100%, $timingFunction: cubic-bezier(0.83, 0, 0.17, 1))
+@function clipInLeft($start: 0%, $end: 100%, $timingFunction: cubic-bezier(0.83, 0, 0.17, 1))
 
     $frame_01: ruleOfThree(50%, $start, $end)
+    $frames: (($start, $frame_01, $end), (animation-timing-function: $timingFunction, clip-path: polygon(0 0, 0 0, 0% 100%,0 100%), opacity: 0), (opacity: 1), (clip-path: polygon(0 0, 100% 0, 100% 100%,0 100%), opacity: 1))
 
-    #{$start}
-        animation-timing-function: $timingFunction
-        clip-path: polygon(0 0, 0 0, 0% 100%,0 100%)
-        opacity: 0
-    #{$frame_01}
-        opacity: 1
-    #{$end}
-        clip-path: polygon(0 0, 100% 0, 100% 100%,0 100%)
-        opacity: 1
+    @return $frames
 
 // CLIP IN RIGHT
 
-@mixin inRight($start: 0%, $end: 50%, $timingFunction: cubic-bezier(0.83, 0, 0.17, 1))
+@function clipInRight($start: 0%, $end: 50%, $timingFunction: cubic-bezier(0.83, 0, 0.17, 1))
 
     $frame_01: ruleOfThree(50%, $start, $end)
+    $frames: (($start, $frame_01, $end), (animation-timing-function: $timingFunction, clip-path: polygon(100% 0, 100% 0, 100% 100%,100% 100%), opacity: 0), (opacity: 1), (clip-path: polygon(0 0, 100% 0, 100% 100%,0 100%), opacity: 1))
 
-    #{$start}
-        animation-timing-function: $timingFunction
-        clip-path: polygon(100% 0, 100% 0, 100% 100%,100% 100%)
-        opacity: 0
-    #{$frame_01}
-        opacity: 1
-    #{$end}
-        clip-path: polygon(0 0, 100% 0, 100% 100%,0 100%)
-        opacity: 1
+    @return $frames
 
 // CLIP IN TOP
 
-@mixin inTop($start: 0%, $end: 100%, $timingFunction: cubic-bezier(0.83, 0, 0.17, 1))
+@function clipInTop($start: 0%, $end: 100%, $timingFunction: cubic-bezier(0.83, 0, 0.17, 1))
 
     $frame_01: ruleOfThree(50%, $start, $end)
+    $frames: (($start, $frame_01, $end), (animation-timing-function: $timingFunction, clip-path: polygon(0 0, 100% 0, 100% 0%, 0% 0%), opacity: 0), (opacity: 1), (clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%), opacity: 1))
 
-    #{$start}
-        animation-timing-function: $timingFunction
-        clip-path: polygon(0 0, 100% 0, 100% 0%, 0% 0%)
-        opacity: 0
-    #{$frame_01}
-        opacity: 1
-    #{$end}
-        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%)
-        opacity: 1
+    @return $frames
 
 // CLIP IN BOTTOM
 
-@mixin inBottom($start: 0%, $end: 100%, $timingFunction: cubic-bezier(0.83, 0, 0.17, 1))
+@function clipInBottom($start: 0%, $end: 100%, $timingFunction: cubic-bezier(0.83, 0, 0.17, 1))
 
     $frame_01: ruleOfThree(50%, $start, $end)
+    $frames: (($start, $frame_01, $end), (animation-timing-function: $timingFunction, clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%), opacity: 0), (opacity: 1), (clip-path: polygon(0 0%, 100% 0%, 100% 100%, 0% 100%), opacity: 1))
 
-    #{$start}
-        animation-timing-function: $timingFunction
-        clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%)
-        opacity: 0
-    #{$frame_01}
-        opacity: 1
-    #{$end}
-        clip-path: polygon(0 0%, 100% 0%, 100% 100%, 0% 100%)
-        opacity: 1
+    @return $frames
 
 // CLIP OUT LEFT
 
-@mixin outLeft($start: 0%, $end: 100%, $timingFunction: cubic-bezier(0.83, 0, 0.17, 1))
+@function clipOutLeft($start: 0%, $end: 100%, $timingFunction: cubic-bezier(0.83, 0, 0.17, 1))
 
     $frame_01: ruleOfThree(95%, $start, $end)
+    $frames: (($start, $frame_01, $end), (animation-timing-function: $timingFunction, clip-path: polygon(0 0%, 100% 0%, 100% 100%, 0% 100%), opacity: 1), (opacity: 0), (clip-path: polygon(0 0, 0 0, 0% 100%,0 100%), opacity: 0))
 
-    #{$start}
-        animation-timing-function: $timingFunction
-        clip-path: polygon(0 0%, 100% 0%, 100% 100%, 0% 100%)
-        opacity: 1
-    #{$frame_01}
-        opacity: 0
-    #{$end}
-        clip-path: polygon(0 0, 0 0, 0% 100%,0 100%)
-        opacity: 0
+    @return $frames
 
 // CLIP OUT TOP
 
-@mixin outTop($start: 0%, $end: 100%, $timingFunction: cubic-bezier(0.83, 0, 0.17, 1))
+@function clipOutTop($start: 0%, $end: 100%, $timingFunction: cubic-bezier(0.83, 0, 0.17, 1))
 
     $frame_01: ruleOfThree(95%, $start, $end)
+    $frames: (($start, $frame_01, $end), (animation-timing-function: $timingFunction, clip-path: polygon(0 0%, 100% 0%, 100% 100%, 0% 100%), opacity: 1), (opacity: 0), (clip-path: polygon(0 0, 100% 0, 100% 0%, 0% 0%), opacity: 0))
 
-    #{$start}
-        animation-timing-function: $timingFunction
-        clip-path: polygon(0 0%, 100% 0%, 100% 100%, 0% 100%)
-        opacity: 1
-    #{$frame_01}
-        opacity: 0
-    #{$end}
-        clip-path: polygon(0 0, 100% 0, 100% 0%, 0% 0%)
-        opacity: 0
+    @return $frames
 
 // CLIP OUT RIGHT
 
-@mixin outRight($start: 0%, $end: 100%, $timingFunction: cubic-bezier(0.83, 0, 0.17, 1))
+@function clipOutRight($start: 0%, $end: 100%, $timingFunction: cubic-bezier(0.83, 0, 0.17, 1))
 
     $frame_01: ruleOfThree(95%, $start, $end)
+    $frames: (($start, $frame_01, $end), (animation-timing-function: $timingFunction, clip-path: polygon(0 0%, 100% 0%, 100% 100%, 0% 100%), opacity: 1), (opacity: 0), (clip-path: polygon(100% 0, 100% 0, 100% 100%,100% 100%), opacity: 0))
 
-    #{$start}
-        animation-timing-function: $timingFunction
-        clip-path: polygon(0 0%, 100% 0%, 100% 100%, 0% 100%)
-        opacity: 1
-    #{$frame_01}
-        opacity: 0
-    #{$end}
-        clip-path: polygon(100% 0, 100% 0, 100% 100%,100% 100%)
-        opacity: 0
+    @return $frames
 
 // CLIP OUT BOTTOM
 
-@mixin outBottom($start: 0%, $end: 100%, $timingFunction: cubic-bezier(0.83, 0, 0.17, 1))
+@function clipOutBottom($start: 0%, $end: 100%, $timingFunction: cubic-bezier(0.83, 0, 0.17, 1))
 
     $frame_01: ruleOfThree(95%, $start, $end)
+    $frames: (($start, $frame_01, $end), (animation-timing-function: $timingFunction, clip-path: polygon(0 0%, 100% 0%, 100% 100%, 0% 100%), opacity: 1), (opacity: 0), (clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%), opacity: 0))
 
-    #{$start}
-        animation-timing-function: $timingFunction
-        clip-path: polygon(0 0%, 100% 0%, 100% 100%, 0% 100%)
-        opacity: 1
-    #{$frame_01}
-        opacity: 0
-    #{$end}
-        clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%)
-        opacity: 0
+    @return $frames

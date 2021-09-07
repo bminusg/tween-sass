@@ -1,14 +1,11 @@
 @use "sass:math"
 
-//@function ruleOfThree($value, $means)
-    //@return math.div($means * $value, 100%)
-
 @function ruleOfThree($value, $start, $end)
     $offset: null
 
-    @if $start == 0%
-        $offset: $end
-    @else
-        $offset: 100% - $start
+    $offset: $end - $start
+    $value: math.div((math.div($value, 1%)), 100)
 
-    @return math.div($offset * $value, 100%) + $start
+    $offset: ($offset * $value) + $start
+
+    @return $offset

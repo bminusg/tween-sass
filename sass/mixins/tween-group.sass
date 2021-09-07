@@ -1,0 +1,52 @@
+// BUILT IN MODULES
+
+@use "sass:list"
+@use "sass:map"
+@use "sass:string"
+
+// KEYFRAME DEFAULTS
+
+@use "../keyframes/__defaults" as *
+
+// TWEEN MIXIN
+
+@use "tween" as *
+
+// MIXIN TWEEN GROUP
+
+@mixin tween-group($tween: (), $groupIndex: 1, $groupLength: 1)
+
+    // GET TWEEN DURATION
+
+    $duration: 0s
+
+    @each $component in $tween
+        $name: list.nth($component, 1)
+
+        @if length($component) > 1
+            $duration: $duration + list.nth($component, 2)
+        @else
+            $duration: $duration + list.nth(map.get($keyframeDefaults, $name), 1)
+
+    // CALCULATE WAIT COMPONENTS
+
+    $waitBefore: 0s
+    $waitAfter: 0s
+
+    @for $i from 1 through $groupLength
+
+        @if $i < $groupIndex
+            $waitBefore: $waitBefore + $duration
+        @else if $i > $groupIndex
+            $waitAfter: $waitAfter + $duration
+
+    // APPEND WAIT COMPONENTS
+    @if $waitBefore > 0s
+        $tween: list.join( wait, $tween, $separator: comma)
+        $tween: list.set-nth($tween, 1, wait $waitBefore)
+
+    @if $waitAfter > 0s
+        $waitAfter: (wait $waitAfter)
+        $tween: list.append($tween, $waitAfter, $separator: comma)
+
+    @include tween($tween...)
