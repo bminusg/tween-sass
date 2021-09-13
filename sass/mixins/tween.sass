@@ -129,28 +129,28 @@ $keyframes: ()
                     @each $key, $value in $values
                         #{$key}: $value
 
-        // DEFINE ANIMATION PROPS
+    // DEFINE ANIMATION PROPS
 
-        $selectors: selector.parse(#{&})
+    $selectors: selector.parse(#{&})
 
-        @each $selector in $selectors
+    @each $selector in $selectors
 
-            // ADDING PARENT
+        // ADDING PARENT
 
-            @if $parent
-                $activeClass: selector.unify($parent, $activeClass)
+        @if $parent
+            $activeClass: selector.unify($parent, $activeClass)
 
-            // IN CASE OF OVERWRITING 
-            // YOU CAN USE A SECOND ACTIVE CLASS OR DATA ATTRIBUTE
+        // IN CASE OF OVERWRITING 
+        // YOU CAN USE A SECOND ACTIVE CLASS OR DATA ATTRIBUTE
 
-            @if length($selector) > 1
-                $superSelector: selector.unify($activeClass, list.nth($selector, 1))
-                $selector: selector.replace($selector, list.nth($selector, 1) , $superSelector)
-            @else
-                $selector: selector.nest($activeClass, $selector)
+        @if length($selector) > 1
+            $superSelector: selector.unify($activeClass, list.nth($selector, 1))
+            $selector: selector.replace($selector, list.nth($selector, 1) , $superSelector)
+        @else
+            $selector: selector.nest($activeClass, $selector)
 
-            @at-root #{$selector}
-                animation-name: $animationName
-                animation-duration: map.get($config, totalDuration)
-                animation-delay: 0s
-                animation-fill-mode: forwards
+        @at-root #{$selector}
+            animation-name: $animationName
+            animation-duration: map.get($config, totalDuration)
+            animation-delay: 0s
+            animation-fill-mode: forwards
