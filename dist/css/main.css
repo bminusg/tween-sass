@@ -151,7 +151,7 @@ body h5 {
   font-size: 1.25rem;
 }
 
-@keyframes slideInLeft_wait_slideOutRight {
+@keyframes uj89yj2_slideInLeft_wait_slideOutRight {
   0% {
     animation-timing-function: cubic-bezier(0.25, 1, 0.5, 1);
     transform: matrix(0.9, 0, 0, 0.9, -150, 0);
@@ -184,7 +184,7 @@ body h5 {
   }
 }
 .is--tweening #preview--leftRight {
-  animation-name: slideInLeft_wait_slideOutRight;
+  animation-name: uj89yj2_slideInLeft_wait_slideOutRight;
   animation-duration: 3.7s;
   animation-delay: 0s;
   animation-fill-mode: forwards;
@@ -193,7 +193,7 @@ body h5 {
 #preview--pulse {
   animation-iteration-count: infinite;
 }
-@keyframes pulse_wait {
+@keyframes uj89yj6_pulse_wait {
   0% {
     animation-timing-function: cubic-bezier(0.68, -0.6, 0.32, 1.6);
     transform: matrix(1, 0, 0, 1, 0, 0);
@@ -209,7 +209,7 @@ body h5 {
   }
 }
 .is--tweening #preview--pulse {
-  animation-name: pulse_wait;
+  animation-name: uj89yj6_pulse_wait;
   animation-duration: 2.6s;
   animation-delay: 0s;
   animation-fill-mode: forwards;
@@ -224,7 +224,7 @@ body h5 {
   border-radius: 0 0 0 0;
   animation-iteration-count: infinite;
 }
-@keyframes slideInLeft_wait_slideOutRight_wait {
+@keyframes uj89yk1_slideInLeft_wait_slideOutRight_wait {
   0% {
     animation-timing-function: cubic-bezier(0.25, 1, 0.5, 1);
     transform: matrix(0.9, 0, 0, 0.9, -150, 0);
@@ -257,7 +257,7 @@ body h5 {
   }
 }
 .is--tweening #preview--group-01 {
-  animation-name: slideInLeft_wait_slideOutRight_wait;
+  animation-name: uj89yk1_slideInLeft_wait_slideOutRight_wait;
   animation-duration: 9.6s;
   animation-delay: 0s;
   animation-fill-mode: forwards;
@@ -269,7 +269,7 @@ body h5 {
   clip-path: polygon(25px 0, 25px 0, 0 50px, 50px 50px);
   animation-iteration-count: infinite;
 }
-@keyframes wait_slideInLeft_wait_slideOutRight_wait {
+@keyframes uj89ykk_wait_slideInLeft_wait_slideOutRight_wait {
   0%, 33% {
     animation-timing-function: cubic-bezier(0.25, 1, 0.5, 1);
     transform: matrix(0.9, 0, 0, 0.9, -150, 0);
@@ -302,7 +302,7 @@ body h5 {
   }
 }
 .is--tweening #preview--group-02 {
-  animation-name: wait_slideInLeft_wait_slideOutRight_wait;
+  animation-name: uj89ykk_wait_slideInLeft_wait_slideOutRight_wait;
   animation-duration: 9.6s;
   animation-delay: 0s;
   animation-fill-mode: forwards;
@@ -312,7 +312,7 @@ body h5 {
   position: absolute;
   animation-iteration-count: infinite;
 }
-@keyframes wait_slideInLeft_wait_slideOutRight {
+@keyframes uj89ykl_wait_slideInLeft_wait_slideOutRight {
   0%, 67% {
     animation-timing-function: cubic-bezier(0.25, 1, 0.5, 1);
     transform: matrix(0.9, 0, 0, 0.9, -150, 0);
@@ -345,13 +345,13 @@ body h5 {
   }
 }
 .is--tweening #preview--group-03 {
-  animation-name: wait_slideInLeft_wait_slideOutRight;
+  animation-name: uj89ykl_wait_slideInLeft_wait_slideOutRight;
   animation-duration: 9.6s;
   animation-delay: 0s;
   animation-fill-mode: forwards;
 }
 
-@keyframes pulse {
+@keyframes uj89yku_pulse {
   0% {
     animation-timing-function: cubic-bezier(0.68, -0.6, 0.32, 1.6);
     transform: matrix(1, 0, 0, 1, 0, 0);
@@ -367,13 +367,13 @@ body h5 {
   }
 }
 .is--tweening #pulse--in {
-  animation-name: pulse;
+  animation-name: uj89yku_pulse;
   animation-duration: 0.6s;
   animation-delay: 0s;
   animation-fill-mode: forwards;
 }
 
-@keyframes clipInCircle {
+@keyframes uj89yls_clipInCircle {
   0% {
     animation-timing-function: cubic-bezier(0.68, -0.6, 0.32, 1.6);
     clip-path: circle(0% at center);
@@ -385,13 +385,13 @@ body h5 {
   }
 }
 .is--tweening #clip--in-circle {
-  animation-name: clipInCircle;
+  animation-name: uj89yls_clipInCircle;
   animation-duration: 0.6s;
   animation-delay: 0s;
   animation-fill-mode: forwards;
 }
 
-@keyframes clipInLeft {
+@keyframes uj89ym4_clipInLeft {
   0% {
     animation-timing-function: cubic-bezier(0.83, 0, 0.17, 1);
     clip-path: polygon(0 0, 0 0, 0% 100%, 0 100%);
@@ -406,13 +406,13 @@ body h5 {
   }
 }
 .is--tweening #clip--in-left {
-  animation-name: clipInLeft;
+  animation-name: uj89ym4_clipInLeft;
   animation-duration: 0.6s;
   animation-delay: 0s;
   animation-fill-mode: forwards;
 }
 
-@keyframes clipInRight {
+@keyframes uj89yma_clipInRight {
   0% {
     animation-timing-function: cubic-bezier(0.83, 0, 0.17, 1);
     clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
@@ -427,13 +427,13 @@ body h5 {
   }
 }
 .is--tweening #clip--in-right {
-  animation-name: clipInRight;
+  animation-name: uj89yma_clipInRight;
   animation-duration: 0.6s;
   animation-delay: 0s;
   animation-fill-mode: forwards;
 }
 
-@keyframes clipInTop {
+@keyframes uj89ymj_clipInTop {
   0% {
     animation-timing-function: cubic-bezier(0.83, 0, 0.17, 1);
     clip-path: polygon(0 0, 100% 0, 100% 0%, 0% 0%);
@@ -448,13 +448,13 @@ body h5 {
   }
 }
 .is--tweening #clip--in-top {
-  animation-name: clipInTop;
+  animation-name: uj89ymj_clipInTop;
   animation-duration: 0.6s;
   animation-delay: 0s;
   animation-fill-mode: forwards;
 }
 
-@keyframes clipInBottom {
+@keyframes uj89yn4_clipInBottom {
   0% {
     animation-timing-function: cubic-bezier(0.83, 0, 0.17, 1);
     clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
@@ -469,13 +469,13 @@ body h5 {
   }
 }
 .is--tweening #clip--in-bottom {
-  animation-name: clipInBottom;
+  animation-name: uj89yn4_clipInBottom;
   animation-duration: 0.6s;
   animation-delay: 0s;
   animation-fill-mode: forwards;
 }
 
-@keyframes clipOutCircle {
+@keyframes uj89yno_clipOutCircle {
   0% {
     animation-timing-function: cubic-bezier(0.68, -0.6, 0.32, 1.6);
     clip-path: circle(100% at center);
@@ -490,13 +490,13 @@ body h5 {
   }
 }
 .is--tweening #clip--out-circle {
-  animation-name: clipOutCircle;
+  animation-name: uj89yno_clipOutCircle;
   animation-duration: 0.6s;
   animation-delay: 0s;
   animation-fill-mode: forwards;
 }
 
-@keyframes clipOutLeft {
+@keyframes uj89ynw_clipOutLeft {
   0% {
     animation-timing-function: cubic-bezier(0.64, 0, 0.78, 0);
     clip-path: polygon(0 0%, 100% 0%, 100% 100%, 0% 100%);
@@ -511,13 +511,13 @@ body h5 {
   }
 }
 .is--tweening #clip--out-left {
-  animation-name: clipOutLeft;
+  animation-name: uj89ynw_clipOutLeft;
   animation-duration: 0.6s;
   animation-delay: 0s;
   animation-fill-mode: forwards;
 }
 
-@keyframes clipOutRight {
+@keyframes uj89yom_clipOutRight {
   0% {
     animation-timing-function: cubic-bezier(0.64, 0, 0.78, 0);
     clip-path: polygon(0 0%, 100% 0%, 100% 100%, 0% 100%);
@@ -532,13 +532,13 @@ body h5 {
   }
 }
 .is--tweening #clip--out-right {
-  animation-name: clipOutRight;
+  animation-name: uj89yom_clipOutRight;
   animation-duration: 0.6s;
   animation-delay: 0s;
   animation-fill-mode: forwards;
 }
 
-@keyframes clipOutTop {
+@keyframes uj89ypa_clipOutTop {
   0% {
     animation-timing-function: cubic-bezier(0.64, 0, 0.78, 0);
     clip-path: polygon(0 0%, 100% 0%, 100% 100%, 0% 100%);
@@ -553,13 +553,13 @@ body h5 {
   }
 }
 .is--tweening #clip--out-top {
-  animation-name: clipOutTop;
+  animation-name: uj89ypa_clipOutTop;
   animation-duration: 0.6s;
   animation-delay: 0s;
   animation-fill-mode: forwards;
 }
 
-@keyframes clipOutBottom {
+@keyframes uj89yq5_clipOutBottom {
   0% {
     animation-timing-function: cubic-bezier(0.64, 0, 0.78, 0);
     clip-path: polygon(0 0%, 100% 0%, 100% 100%, 0% 100%);
@@ -574,13 +574,13 @@ body h5 {
   }
 }
 .is--tweening #clip--out-bottom {
-  animation-name: clipOutBottom;
+  animation-name: uj89yq5_clipOutBottom;
   animation-duration: 0.6s;
   animation-delay: 0s;
   animation-fill-mode: forwards;
 }
 
-@keyframes slideInLeft {
+@keyframes uj89yqz_slideInLeft {
   0% {
     animation-timing-function: cubic-bezier(0.25, 1, 0.5, 1);
     transform: matrix(0.9, 0, 0, 0.9, -150, 0);
@@ -598,13 +598,13 @@ body h5 {
   }
 }
 .is--tweening #slide--in-left {
-  animation-name: slideInLeft;
+  animation-name: uj89yqz_slideInLeft;
   animation-duration: 0.6s;
   animation-delay: 0s;
   animation-fill-mode: forwards;
 }
 
-@keyframes slideInRight {
+@keyframes uj89yr5_slideInRight {
   0% {
     animation-timing-function: cubic-bezier(0.25, 1, 0.5, 1);
     transform: matrix(0.9, 0, 0, 0.9, 150, 0);
@@ -622,13 +622,13 @@ body h5 {
   }
 }
 .is--tweening #slide--in-right {
-  animation-name: slideInRight;
+  animation-name: uj89yr5_slideInRight;
   animation-duration: 0.6s;
   animation-delay: 0s;
   animation-fill-mode: forwards;
 }
 
-@keyframes slideInBottom {
+@keyframes uj89yrh_slideInBottom {
   0% {
     animation-timing-function: cubic-bezier(0.25, 1, 0.5, 1);
     transform: matrix(0.9, 0, 0, 0.9, 0, 150);
@@ -646,13 +646,13 @@ body h5 {
   }
 }
 .is--tweening #slide--in-bottom {
-  animation-name: slideInBottom;
+  animation-name: uj89yrh_slideInBottom;
   animation-duration: 0.6s;
   animation-delay: 0s;
   animation-fill-mode: forwards;
 }
 
-@keyframes slideInTop {
+@keyframes uj89yrr_slideInTop {
   0% {
     animation-timing-function: cubic-bezier(0.25, 1, 0.5, 1);
     transform: matrix(0.9, 0, 0, 0.9, 0, -150);
@@ -670,13 +670,13 @@ body h5 {
   }
 }
 .is--tweening #slide--in-top {
-  animation-name: slideInTop;
+  animation-name: uj89yrr_slideInTop;
   animation-duration: 0.6s;
   animation-delay: 0s;
   animation-fill-mode: forwards;
 }
 
-@keyframes slideOutLeft {
+@keyframes uj89ysl_slideOutLeft {
   0% {
     animation-timing-function: cubic-bezier(0.64, 0, 0.78, 0);
     transform: matrix(1, 0, 0, 1, 0, 0);
@@ -694,13 +694,13 @@ body h5 {
   }
 }
 .is--tweening #slide--out-left {
-  animation-name: slideOutLeft;
+  animation-name: uj89ysl_slideOutLeft;
   animation-duration: 0.6s;
   animation-delay: 0s;
   animation-fill-mode: forwards;
 }
 
-@keyframes slideOutRight {
+@keyframes uj89yst_slideOutRight {
   0% {
     animation-timing-function: cubic-bezier(0.64, 0, 0.78, 0);
     transform: matrix(1, 0, 0, 1, 0, 0);
@@ -718,13 +718,13 @@ body h5 {
   }
 }
 .is--tweening #slide--out-right {
-  animation-name: slideOutRight;
+  animation-name: uj89yst_slideOutRight;
   animation-duration: 0.6s;
   animation-delay: 0s;
   animation-fill-mode: forwards;
 }
 
-@keyframes slideOutBottom {
+@keyframes uj89yt1_slideOutBottom {
   0% {
     animation-timing-function: cubic-bezier(0.64, 0, 0.78, 0);
     transform: matrix(1, 0, 0, 1, 0, 0);
@@ -742,13 +742,13 @@ body h5 {
   }
 }
 .is--tweening #slide--out-bottom {
-  animation-name: slideOutBottom;
+  animation-name: uj89yt1_slideOutBottom;
   animation-duration: 0.6s;
   animation-delay: 0s;
   animation-fill-mode: forwards;
 }
 
-@keyframes slideOutTop {
+@keyframes uj89yt8_slideOutTop {
   0% {
     animation-timing-function: cubic-bezier(0.64, 0, 0.78, 0);
     transform: matrix(1, 0, 0, 1, 0, 0);
@@ -766,13 +766,13 @@ body h5 {
   }
 }
 .is--tweening #slide--out-top {
-  animation-name: slideOutTop;
+  animation-name: uj89yt8_slideOutTop;
   animation-duration: 0.6s;
   animation-delay: 0s;
   animation-fill-mode: forwards;
 }
 
-@keyframes fadeIn {
+@keyframes uj89yu7_fadeIn {
   0% {
     animation-timing-function: cubic-bezier(0.64, 0, 0.78, 0);
     opacity: 0;
@@ -782,13 +782,13 @@ body h5 {
   }
 }
 .is--tweening #fade--in {
-  animation-name: fadeIn;
+  animation-name: uj89yu7_fadeIn;
   animation-duration: 1s;
   animation-delay: 0s;
   animation-fill-mode: forwards;
 }
 
-@keyframes fadeOut {
+@keyframes uj89yue_fadeOut {
   0% {
     animation-timing-function: cubic-bezier(0.25, 1, 0.5, 1);
     opacity: 1;
@@ -798,13 +798,13 @@ body h5 {
   }
 }
 .is--tweening #fade--out {
-  animation-name: fadeOut;
+  animation-name: uj89yue_fadeOut;
   animation-duration: 1s;
   animation-delay: 0s;
   animation-fill-mode: forwards;
 }
 
-@keyframes zoomIn {
+@keyframes uj89yus_zoomIn {
   0% {
     animation-timing-function: cubic-bezier(0.25, 1, 0.5, 1);
     transform: matrix(0.3, 0, 0, 0.3, 0, 0);
@@ -819,13 +819,13 @@ body h5 {
   }
 }
 .is--tweening #zoom--in {
-  animation-name: zoomIn;
+  animation-name: uj89yus_zoomIn;
   animation-duration: 1s;
   animation-delay: 0s;
   animation-fill-mode: forwards;
 }
 
-@keyframes zoomInLeft {
+@keyframes uj89yv2_zoomInLeft {
   0% {
     animation-timing-function: cubic-bezier(0.25, 1, 0.5, 1);
     transform: matrix(0.3, 0, 0, 0.3, 0, 0);
@@ -842,13 +842,13 @@ body h5 {
   }
 }
 .is--tweening #zoom--in-left {
-  animation-name: zoomInLeft;
+  animation-name: uj89yv2_zoomInLeft;
   animation-duration: 1s;
   animation-delay: 0s;
   animation-fill-mode: forwards;
 }
 
-@keyframes zoomInRight {
+@keyframes uj89yv6_zoomInRight {
   0% {
     animation-timing-function: cubic-bezier(0.25, 1, 0.5, 1);
     transform: matrix(0.3, 0, 0, 0.3, 0, 0);
@@ -865,13 +865,13 @@ body h5 {
   }
 }
 .is--tweening #zoom--in-right {
-  animation-name: zoomInRight;
+  animation-name: uj89yv6_zoomInRight;
   animation-duration: 1s;
   animation-delay: 0s;
   animation-fill-mode: forwards;
 }
 
-@keyframes zoomInBottom {
+@keyframes uj89yvo_zoomInBottom {
   0% {
     animation-timing-function: cubic-bezier(0.25, 1, 0.5, 1);
     transform: matrix(0.3, 0, 0, 0.3, 0, 0);
@@ -888,13 +888,13 @@ body h5 {
   }
 }
 .is--tweening #zoom--in-bottom {
-  animation-name: zoomInBottom;
+  animation-name: uj89yvo_zoomInBottom;
   animation-duration: 1s;
   animation-delay: 0s;
   animation-fill-mode: forwards;
 }
 
-@keyframes zoomInTop {
+@keyframes uj89yw7_zoomInTop {
   0% {
     animation-timing-function: cubic-bezier(0.25, 1, 0.5, 1);
     transform: matrix(0.3, 0, 0, 0.3, 0, 0);
@@ -911,13 +911,13 @@ body h5 {
   }
 }
 .is--tweening #zoom--in-top {
-  animation-name: zoomInTop;
+  animation-name: uj89yw7_zoomInTop;
   animation-duration: 1s;
   animation-delay: 0s;
   animation-fill-mode: forwards;
 }
 
-@keyframes zoomOut {
+@keyframes uj89ywn_zoomOut {
   0% {
     animation-timing-function: cubic-bezier(0.64, 0, 0.78, 0);
     transform: matrix(1, 0, 0, 1, 0, 0);
@@ -932,13 +932,13 @@ body h5 {
   }
 }
 .is--tweening #zoom--out {
-  animation-name: zoomOut;
+  animation-name: uj89ywn_zoomOut;
   animation-duration: 1s;
   animation-delay: 0s;
   animation-fill-mode: forwards;
 }
 
-@keyframes zoomOutLeft {
+@keyframes uj89yxc_zoomOutLeft {
   0% {
     animation-timing-function: cubic-bezier(0.64, 0, 0.78, 0);
     transform: matrix(1, 0, 0, 1, 0, 0);
@@ -955,13 +955,13 @@ body h5 {
   }
 }
 .is--tweening #zoom--out-left {
-  animation-name: zoomOutLeft;
+  animation-name: uj89yxc_zoomOutLeft;
   animation-duration: 1s;
   animation-delay: 0s;
   animation-fill-mode: forwards;
 }
 
-@keyframes zoomOutRight {
+@keyframes uj89yy0_zoomOutRight {
   0% {
     animation-timing-function: cubic-bezier(0.64, 0, 0.78, 0);
     transform: matrix(1, 0, 0, 1, 0, 0);
@@ -978,13 +978,13 @@ body h5 {
   }
 }
 .is--tweening #zoom--out-right {
-  animation-name: zoomOutRight;
+  animation-name: uj89yy0_zoomOutRight;
   animation-duration: 1s;
   animation-delay: 0s;
   animation-fill-mode: forwards;
 }
 
-@keyframes zoomOutBottom {
+@keyframes uj89yy4_zoomOutBottom {
   0% {
     animation-timing-function: cubic-bezier(0.64, 0, 0.78, 0);
     transform: matrix(1, 0, 0, 1, 0, 0);
@@ -1001,13 +1001,13 @@ body h5 {
   }
 }
 .is--tweening #zoom--out-bottom {
-  animation-name: zoomOutBottom;
+  animation-name: uj89yy4_zoomOutBottom;
   animation-duration: 1s;
   animation-delay: 0s;
   animation-fill-mode: forwards;
 }
 
-@keyframes zoomOutTop {
+@keyframes uj89yyi_zoomOutTop {
   0% {
     animation-timing-function: cubic-bezier(0.64, 0, 0.78, 0);
     transform: matrix(1, 0, 0, 1, 0, 0);
@@ -1024,7 +1024,7 @@ body h5 {
   }
 }
 .is--tweening #zoom--out-top {
-  animation-name: zoomOutTop;
+  animation-name: uj89yyi_zoomOutTop;
   animation-duration: 1s;
   animation-delay: 0s;
   animation-fill-mode: forwards;

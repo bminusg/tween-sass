@@ -4,6 +4,7 @@
 @use "sass:map"
 @use "sass:math"
 @use "sass:selector"
+@use "sass:string"
 
 // DEFINE CUSTOM CONFIG
 
@@ -100,7 +101,7 @@ $keyframes: ()
 
     @for $i from 1 to length($names) + 1
         @if $animationName == null
-            $animationName: list.nth($names, $i)
+            $animationName: string.unique-id() + "_" + list.nth($names, $i)
         @else
             $animationName: $animationName + "_" + list.nth($names, $i)
 
