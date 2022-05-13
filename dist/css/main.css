@@ -151,7 +151,7 @@ body h5 {
   font-size: 1.25rem;
 }
 
-@keyframes uj89yj2_slideInLeft_wait_slideOutRight {
+@keyframes uo3jvhh {
   0% {
     animation-timing-function: cubic-bezier(0.25, 1, 0.5, 1);
     transform: matrix(0.9, 0, 0, 0.9, -150, 0);
@@ -184,7 +184,7 @@ body h5 {
   }
 }
 .is--tweening #preview--leftRight {
-  animation-name: uj89yj2_slideInLeft_wait_slideOutRight;
+  animation-name: uo3jvhh;
   animation-duration: 3.7s;
   animation-delay: 0s;
   animation-fill-mode: forwards;
@@ -193,7 +193,7 @@ body h5 {
 #preview--pulse {
   animation-iteration-count: infinite;
 }
-@keyframes uj89yj6_pulse_wait {
+@keyframes uo3jvhy {
   0% {
     animation-timing-function: cubic-bezier(0.68, -0.6, 0.32, 1.6);
     transform: matrix(1, 0, 0, 1, 0, 0);
@@ -209,7 +209,7 @@ body h5 {
   }
 }
 .is--tweening #preview--pulse {
-  animation-name: uj89yj6_pulse_wait;
+  animation-name: uo3jvhy;
   animation-duration: 2.6s;
   animation-delay: 0s;
   animation-fill-mode: forwards;
@@ -224,7 +224,7 @@ body h5 {
   border-radius: 0 0 0 0;
   animation-iteration-count: infinite;
 }
-@keyframes uj89yk1_slideInLeft_wait_slideOutRight_wait {
+@keyframes uo3jvir {
   0% {
     animation-timing-function: cubic-bezier(0.25, 1, 0.5, 1);
     transform: matrix(0.9, 0, 0, 0.9, -150, 0);
@@ -257,7 +257,7 @@ body h5 {
   }
 }
 .is--tweening #preview--group-01 {
-  animation-name: uj89yk1_slideInLeft_wait_slideOutRight_wait;
+  animation-name: uo3jvir;
   animation-duration: 9.6s;
   animation-delay: 0s;
   animation-fill-mode: forwards;
@@ -269,7 +269,7 @@ body h5 {
   clip-path: polygon(25px 0, 25px 0, 0 50px, 50px 50px);
   animation-iteration-count: infinite;
 }
-@keyframes uj89ykk_wait_slideInLeft_wait_slideOutRight_wait {
+@keyframes uo3jvjh {
   0%, 33% {
     animation-timing-function: cubic-bezier(0.25, 1, 0.5, 1);
     transform: matrix(0.9, 0, 0, 0.9, -150, 0);
@@ -302,7 +302,7 @@ body h5 {
   }
 }
 .is--tweening #preview--group-02 {
-  animation-name: uj89ykk_wait_slideInLeft_wait_slideOutRight_wait;
+  animation-name: uo3jvjh;
   animation-duration: 9.6s;
   animation-delay: 0s;
   animation-fill-mode: forwards;
@@ -312,7 +312,7 @@ body h5 {
   position: absolute;
   animation-iteration-count: infinite;
 }
-@keyframes uj89ykl_wait_slideInLeft_wait_slideOutRight {
+@keyframes uo3jvk2 {
   0%, 67% {
     animation-timing-function: cubic-bezier(0.25, 1, 0.5, 1);
     transform: matrix(0.9, 0, 0, 0.9, -150, 0);
@@ -345,13 +345,13 @@ body h5 {
   }
 }
 .is--tweening #preview--group-03 {
-  animation-name: uj89ykl_wait_slideInLeft_wait_slideOutRight;
+  animation-name: uo3jvk2;
   animation-duration: 9.6s;
   animation-delay: 0s;
   animation-fill-mode: forwards;
 }
 
-@keyframes uj89yku_pulse {
+@keyframes uo3jvkl {
   0% {
     animation-timing-function: cubic-bezier(0.68, -0.6, 0.32, 1.6);
     transform: matrix(1, 0, 0, 1, 0, 0);
@@ -367,13 +367,13 @@ body h5 {
   }
 }
 .is--tweening #pulse--in {
-  animation-name: uj89yku_pulse;
+  animation-name: uo3jvkl;
   animation-duration: 0.6s;
   animation-delay: 0s;
   animation-fill-mode: forwards;
 }
 
-@keyframes uj89yls_clipInCircle {
+@keyframes uo3jvlc {
   0% {
     animation-timing-function: cubic-bezier(0.68, -0.6, 0.32, 1.6);
     clip-path: circle(0% at center);
@@ -385,13 +385,13 @@ body h5 {
   }
 }
 .is--tweening #clip--in-circle {
-  animation-name: uj89yls_clipInCircle;
+  animation-name: uo3jvlc;
   animation-duration: 0.6s;
   animation-delay: 0s;
   animation-fill-mode: forwards;
 }
 
-@keyframes uj89ym4_clipInLeft {
+@keyframes uo3jvlw {
   0% {
     animation-timing-function: cubic-bezier(0.83, 0, 0.17, 1);
     clip-path: polygon(0 0, 0 0, 0% 100%, 0 100%);
@@ -406,13 +406,13 @@ body h5 {
   }
 }
 .is--tweening #clip--in-left {
-  animation-name: uj89ym4_clipInLeft;
+  animation-name: uo3jvlw;
   animation-duration: 0.6s;
   animation-delay: 0s;
   animation-fill-mode: forwards;
 }
 
-@keyframes uj89yma_clipInRight {
+@keyframes uo3jvmi {
   0% {
     animation-timing-function: cubic-bezier(0.83, 0, 0.17, 1);
     clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
@@ -427,13 +427,13 @@ body h5 {
   }
 }
 .is--tweening #clip--in-right {
-  animation-name: uj89yma_clipInRight;
+  animation-name: uo3jvmi;
   animation-duration: 0.6s;
   animation-delay: 0s;
   animation-fill-mode: forwards;
 }
 
-@keyframes uj89ymj_clipInTop {
+@keyframes uo3jvmp {
   0% {
     animation-timing-function: cubic-bezier(0.83, 0, 0.17, 1);
     clip-path: polygon(0 0, 100% 0, 100% 0%, 0% 0%);
@@ -448,13 +448,13 @@ body h5 {
   }
 }
 .is--tweening #clip--in-top {
-  animation-name: uj89ymj_clipInTop;
+  animation-name: uo3jvmp;
   animation-duration: 0.6s;
   animation-delay: 0s;
   animation-fill-mode: forwards;
 }
 
-@keyframes uj89yn4_clipInBottom {
+@keyframes uo3jvni {
   0% {
     animation-timing-function: cubic-bezier(0.83, 0, 0.17, 1);
     clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
@@ -469,13 +469,13 @@ body h5 {
   }
 }
 .is--tweening #clip--in-bottom {
-  animation-name: uj89yn4_clipInBottom;
+  animation-name: uo3jvni;
   animation-duration: 0.6s;
   animation-delay: 0s;
   animation-fill-mode: forwards;
 }
 
-@keyframes uj89yno_clipOutCircle {
+@keyframes uo3jvob {
   0% {
     animation-timing-function: cubic-bezier(0.68, -0.6, 0.32, 1.6);
     clip-path: circle(100% at center);
@@ -490,13 +490,13 @@ body h5 {
   }
 }
 .is--tweening #clip--out-circle {
-  animation-name: uj89yno_clipOutCircle;
+  animation-name: uo3jvob;
   animation-duration: 0.6s;
   animation-delay: 0s;
   animation-fill-mode: forwards;
 }
 
-@keyframes uj89ynw_clipOutLeft {
+@keyframes uo3jvp6 {
   0% {
     animation-timing-function: cubic-bezier(0.64, 0, 0.78, 0);
     clip-path: polygon(0 0%, 100% 0%, 100% 100%, 0% 100%);
@@ -511,13 +511,13 @@ body h5 {
   }
 }
 .is--tweening #clip--out-left {
-  animation-name: uj89ynw_clipOutLeft;
+  animation-name: uo3jvp6;
   animation-duration: 0.6s;
   animation-delay: 0s;
   animation-fill-mode: forwards;
 }
 
-@keyframes uj89yom_clipOutRight {
+@keyframes uo3jvpj {
   0% {
     animation-timing-function: cubic-bezier(0.64, 0, 0.78, 0);
     clip-path: polygon(0 0%, 100% 0%, 100% 100%, 0% 100%);
@@ -532,13 +532,13 @@ body h5 {
   }
 }
 .is--tweening #clip--out-right {
-  animation-name: uj89yom_clipOutRight;
+  animation-name: uo3jvpj;
   animation-duration: 0.6s;
   animation-delay: 0s;
   animation-fill-mode: forwards;
 }
 
-@keyframes uj89ypa_clipOutTop {
+@keyframes uo3jvps {
   0% {
     animation-timing-function: cubic-bezier(0.64, 0, 0.78, 0);
     clip-path: polygon(0 0%, 100% 0%, 100% 100%, 0% 100%);
@@ -553,13 +553,13 @@ body h5 {
   }
 }
 .is--tweening #clip--out-top {
-  animation-name: uj89ypa_clipOutTop;
+  animation-name: uo3jvps;
   animation-duration: 0.6s;
   animation-delay: 0s;
   animation-fill-mode: forwards;
 }
 
-@keyframes uj89yq5_clipOutBottom {
+@keyframes uo3jvpt {
   0% {
     animation-timing-function: cubic-bezier(0.64, 0, 0.78, 0);
     clip-path: polygon(0 0%, 100% 0%, 100% 100%, 0% 100%);
@@ -574,13 +574,13 @@ body h5 {
   }
 }
 .is--tweening #clip--out-bottom {
-  animation-name: uj89yq5_clipOutBottom;
+  animation-name: uo3jvpt;
   animation-duration: 0.6s;
   animation-delay: 0s;
   animation-fill-mode: forwards;
 }
 
-@keyframes uj89yqz_slideInLeft {
+@keyframes uo3jvpw {
   0% {
     animation-timing-function: cubic-bezier(0.25, 1, 0.5, 1);
     transform: matrix(0.9, 0, 0, 0.9, -150, 0);
@@ -598,13 +598,13 @@ body h5 {
   }
 }
 .is--tweening #slide--in-left {
-  animation-name: uj89yqz_slideInLeft;
+  animation-name: uo3jvpw;
   animation-duration: 0.6s;
   animation-delay: 0s;
   animation-fill-mode: forwards;
 }
 
-@keyframes uj89yr5_slideInRight {
+@keyframes uo3jvqq {
   0% {
     animation-timing-function: cubic-bezier(0.25, 1, 0.5, 1);
     transform: matrix(0.9, 0, 0, 0.9, 150, 0);
@@ -622,13 +622,13 @@ body h5 {
   }
 }
 .is--tweening #slide--in-right {
-  animation-name: uj89yr5_slideInRight;
+  animation-name: uo3jvqq;
   animation-duration: 0.6s;
   animation-delay: 0s;
   animation-fill-mode: forwards;
 }
 
-@keyframes uj89yrh_slideInBottom {
+@keyframes uo3jvrc {
   0% {
     animation-timing-function: cubic-bezier(0.25, 1, 0.5, 1);
     transform: matrix(0.9, 0, 0, 0.9, 0, 150);
@@ -646,13 +646,13 @@ body h5 {
   }
 }
 .is--tweening #slide--in-bottom {
-  animation-name: uj89yrh_slideInBottom;
+  animation-name: uo3jvrc;
   animation-duration: 0.6s;
   animation-delay: 0s;
   animation-fill-mode: forwards;
 }
 
-@keyframes uj89yrr_slideInTop {
+@keyframes uo3jvs4 {
   0% {
     animation-timing-function: cubic-bezier(0.25, 1, 0.5, 1);
     transform: matrix(0.9, 0, 0, 0.9, 0, -150);
@@ -670,13 +670,13 @@ body h5 {
   }
 }
 .is--tweening #slide--in-top {
-  animation-name: uj89yrr_slideInTop;
+  animation-name: uo3jvs4;
   animation-duration: 0.6s;
   animation-delay: 0s;
   animation-fill-mode: forwards;
 }
 
-@keyframes uj89ysl_slideOutLeft {
+@keyframes uo3jvt0 {
   0% {
     animation-timing-function: cubic-bezier(0.64, 0, 0.78, 0);
     transform: matrix(1, 0, 0, 1, 0, 0);
@@ -694,13 +694,13 @@ body h5 {
   }
 }
 .is--tweening #slide--out-left {
-  animation-name: uj89ysl_slideOutLeft;
+  animation-name: uo3jvt0;
   animation-duration: 0.6s;
   animation-delay: 0s;
   animation-fill-mode: forwards;
 }
 
-@keyframes uj89yst_slideOutRight {
+@keyframes uo3jvt7 {
   0% {
     animation-timing-function: cubic-bezier(0.64, 0, 0.78, 0);
     transform: matrix(1, 0, 0, 1, 0, 0);
@@ -718,13 +718,13 @@ body h5 {
   }
 }
 .is--tweening #slide--out-right {
-  animation-name: uj89yst_slideOutRight;
+  animation-name: uo3jvt7;
   animation-duration: 0.6s;
   animation-delay: 0s;
   animation-fill-mode: forwards;
 }
 
-@keyframes uj89yt1_slideOutBottom {
+@keyframes uo3jvtr {
   0% {
     animation-timing-function: cubic-bezier(0.64, 0, 0.78, 0);
     transform: matrix(1, 0, 0, 1, 0, 0);
@@ -742,13 +742,13 @@ body h5 {
   }
 }
 .is--tweening #slide--out-bottom {
-  animation-name: uj89yt1_slideOutBottom;
+  animation-name: uo3jvtr;
   animation-duration: 0.6s;
   animation-delay: 0s;
   animation-fill-mode: forwards;
 }
 
-@keyframes uj89yt8_slideOutTop {
+@keyframes uo3jvtv {
   0% {
     animation-timing-function: cubic-bezier(0.64, 0, 0.78, 0);
     transform: matrix(1, 0, 0, 1, 0, 0);
@@ -766,13 +766,13 @@ body h5 {
   }
 }
 .is--tweening #slide--out-top {
-  animation-name: uj89yt8_slideOutTop;
+  animation-name: uo3jvtv;
   animation-duration: 0.6s;
   animation-delay: 0s;
   animation-fill-mode: forwards;
 }
 
-@keyframes uj89yu7_fadeIn {
+@keyframes uo3jvtz {
   0% {
     animation-timing-function: cubic-bezier(0.64, 0, 0.78, 0);
     opacity: 0;
@@ -782,13 +782,13 @@ body h5 {
   }
 }
 .is--tweening #fade--in {
-  animation-name: uj89yu7_fadeIn;
+  animation-name: uo3jvtz;
   animation-duration: 1s;
   animation-delay: 0s;
   animation-fill-mode: forwards;
 }
 
-@keyframes uj89yue_fadeOut {
+@keyframes uo3jvuh {
   0% {
     animation-timing-function: cubic-bezier(0.25, 1, 0.5, 1);
     opacity: 1;
@@ -798,13 +798,13 @@ body h5 {
   }
 }
 .is--tweening #fade--out {
-  animation-name: uj89yue_fadeOut;
+  animation-name: uo3jvuh;
   animation-duration: 1s;
   animation-delay: 0s;
   animation-fill-mode: forwards;
 }
 
-@keyframes uj89yus_zoomIn {
+@keyframes uo3jvuv {
   0% {
     animation-timing-function: cubic-bezier(0.25, 1, 0.5, 1);
     transform: matrix(0.3, 0, 0, 0.3, 0, 0);
@@ -819,13 +819,13 @@ body h5 {
   }
 }
 .is--tweening #zoom--in {
-  animation-name: uj89yus_zoomIn;
+  animation-name: uo3jvuv;
   animation-duration: 1s;
   animation-delay: 0s;
   animation-fill-mode: forwards;
 }
 
-@keyframes uj89yv2_zoomInLeft {
+@keyframes uo3jvvc {
   0% {
     animation-timing-function: cubic-bezier(0.25, 1, 0.5, 1);
     transform: matrix(0.3, 0, 0, 0.3, 0, 0);
@@ -842,13 +842,13 @@ body h5 {
   }
 }
 .is--tweening #zoom--in-left {
-  animation-name: uj89yv2_zoomInLeft;
+  animation-name: uo3jvvc;
   animation-duration: 1s;
   animation-delay: 0s;
   animation-fill-mode: forwards;
 }
 
-@keyframes uj89yv6_zoomInRight {
+@keyframes uo3jvvw {
   0% {
     animation-timing-function: cubic-bezier(0.25, 1, 0.5, 1);
     transform: matrix(0.3, 0, 0, 0.3, 0, 0);
@@ -865,13 +865,13 @@ body h5 {
   }
 }
 .is--tweening #zoom--in-right {
-  animation-name: uj89yv6_zoomInRight;
+  animation-name: uo3jvvw;
   animation-duration: 1s;
   animation-delay: 0s;
   animation-fill-mode: forwards;
 }
 
-@keyframes uj89yvo_zoomInBottom {
+@keyframes uo3jvw2 {
   0% {
     animation-timing-function: cubic-bezier(0.25, 1, 0.5, 1);
     transform: matrix(0.3, 0, 0, 0.3, 0, 0);
@@ -888,13 +888,13 @@ body h5 {
   }
 }
 .is--tweening #zoom--in-bottom {
-  animation-name: uj89yvo_zoomInBottom;
+  animation-name: uo3jvw2;
   animation-duration: 1s;
   animation-delay: 0s;
   animation-fill-mode: forwards;
 }
 
-@keyframes uj89yw7_zoomInTop {
+@keyframes uo3jvwl {
   0% {
     animation-timing-function: cubic-bezier(0.25, 1, 0.5, 1);
     transform: matrix(0.3, 0, 0, 0.3, 0, 0);
@@ -911,13 +911,13 @@ body h5 {
   }
 }
 .is--tweening #zoom--in-top {
-  animation-name: uj89yw7_zoomInTop;
+  animation-name: uo3jvwl;
   animation-duration: 1s;
   animation-delay: 0s;
   animation-fill-mode: forwards;
 }
 
-@keyframes uj89ywn_zoomOut {
+@keyframes uo3jvxg {
   0% {
     animation-timing-function: cubic-bezier(0.64, 0, 0.78, 0);
     transform: matrix(1, 0, 0, 1, 0, 0);
@@ -932,13 +932,13 @@ body h5 {
   }
 }
 .is--tweening #zoom--out {
-  animation-name: uj89ywn_zoomOut;
+  animation-name: uo3jvxg;
   animation-duration: 1s;
   animation-delay: 0s;
   animation-fill-mode: forwards;
 }
 
-@keyframes uj89yxc_zoomOutLeft {
+@keyframes uo3jvy9 {
   0% {
     animation-timing-function: cubic-bezier(0.64, 0, 0.78, 0);
     transform: matrix(1, 0, 0, 1, 0, 0);
@@ -955,13 +955,13 @@ body h5 {
   }
 }
 .is--tweening #zoom--out-left {
-  animation-name: uj89yxc_zoomOutLeft;
+  animation-name: uo3jvy9;
   animation-duration: 1s;
   animation-delay: 0s;
   animation-fill-mode: forwards;
 }
 
-@keyframes uj89yy0_zoomOutRight {
+@keyframes uo3jvz5 {
   0% {
     animation-timing-function: cubic-bezier(0.64, 0, 0.78, 0);
     transform: matrix(1, 0, 0, 1, 0, 0);
@@ -978,13 +978,13 @@ body h5 {
   }
 }
 .is--tweening #zoom--out-right {
-  animation-name: uj89yy0_zoomOutRight;
+  animation-name: uo3jvz5;
   animation-duration: 1s;
   animation-delay: 0s;
   animation-fill-mode: forwards;
 }
 
-@keyframes uj89yy4_zoomOutBottom {
+@keyframes uo3jvzi {
   0% {
     animation-timing-function: cubic-bezier(0.64, 0, 0.78, 0);
     transform: matrix(1, 0, 0, 1, 0, 0);
@@ -1001,13 +1001,13 @@ body h5 {
   }
 }
 .is--tweening #zoom--out-bottom {
-  animation-name: uj89yy4_zoomOutBottom;
+  animation-name: uo3jvzi;
   animation-duration: 1s;
   animation-delay: 0s;
   animation-fill-mode: forwards;
 }
 
-@keyframes uj89yyi_zoomOutTop {
+@keyframes uo3jw0e {
   0% {
     animation-timing-function: cubic-bezier(0.64, 0, 0.78, 0);
     transform: matrix(1, 0, 0, 1, 0, 0);
@@ -1024,7 +1024,7 @@ body h5 {
   }
 }
 .is--tweening #zoom--out-top {
-  animation-name: uj89yyi_zoomOutTop;
+  animation-name: uo3jw0e;
   animation-duration: 1s;
   animation-delay: 0s;
   animation-fill-mode: forwards;

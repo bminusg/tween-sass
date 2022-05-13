@@ -96,14 +96,8 @@ $keyframes: ()
 
     // BUILD ANIMATION NAME
 
-    $animationName: null
+    $animationName: string.unique-id()
     $names: map.get($config, "name")
-
-    @for $i from 1 to length($names) + 1
-        @if $animationName == null
-            $animationName: string.unique-id() + "_" + list.nth($names, $i)
-        @else
-            $animationName: $animationName + "_" + list.nth($names, $i)
 
     // PREVENT KEYFRAME DUPLICATES
 
